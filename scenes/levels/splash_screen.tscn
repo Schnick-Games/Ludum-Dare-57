@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://404g6vpgwrov"]
+
+[ext_resource type="Script" uid="uid://cxk036y3nsskr" path="res://scripts/levels/splash_screen.gd" id="1_7v8mj"]
+[ext_resource type="Texture2D" uid="uid://d3p0qlqh50nf8" path="res://art/Phil.png" id="2_qnb1p"]
+[ext_resource type="AudioStream" uid="uid://b6b4vg72hyort" path="res://audio/WhatTheSchnick.wav" id="3_umevs"]
+
+[sub_resource type="Gradient" id="Gradient_4ujc3"]
+colors = PackedColorArray(0.698039, 0, 0, 1, 0.529412, 0.658824, 0.882353, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1oal6"]
+gradient = SubResource("Gradient_4ujc3")
+
+[node name="SplashScreen" type="Node"]
+script = ExtResource("1_7v8mj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(611, 281)
+scale = Vector2(20, 5000)
+texture = SubResource("GradientTexture1D_1oal6")
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+offset_left = 335.0
+offset_top = 53.0
+offset_right = 734.0
+offset_bottom = 122.0
+
+[node name="Label" type="Label" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "SCHNICK GAMES"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -20.0
+offset_right = 33.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(0, 50)
+texture = ExtResource("2_qnb1p")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(611, 281)
+scale = Vector2(20, 5000)
+stream = ExtResource("3_umevs")
+volume_db = -20.613
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
