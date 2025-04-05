@@ -51,8 +51,8 @@ stream_0/stream = ExtResource("5_p47bc")
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dovo2")
-gravity = 2000.0
-jump_velocity = 850.0
+gravity = 3000.0
+jump_velocity = 1300.0
 horizontal_drag = 2000.0
 double_jump_unlocked = true
 wall_jump_unlocked = true
@@ -80,5 +80,11 @@ volume_db = -10.0
 [node name="LandingSounds" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_75vfm")
 volume_db = -25.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+limit_left = -64
+limit_right = 8128
+position_smoothing_enabled = true
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

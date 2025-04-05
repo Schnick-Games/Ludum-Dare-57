@@ -19,13 +19,6 @@ wall_jump_unlocked = false
 wall_slide_unlocked = false
 dash_unlocked = false
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(5, 11)
-scale = Vector2(1.17727, 1.75693)
-limit_left = -1000
-limit_right = 1000
-position_smoothing_enabled = true
-
 [node name="Floor" parent="." instance=ExtResource("3_y0acb")]
 position = Vector2(-1, 128)
 texture = ExtResource("4_j4d2a")
