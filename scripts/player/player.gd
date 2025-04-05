@@ -23,8 +23,9 @@ func _ready() -> void:
 	sprite.play("idle")
 
 func _physics_process(delta: float) -> void:
-	velocity.y += gravity * delta
-	velocity.y = min(velocity.y, max_down_velocity)
+	if !dashing || abs(velocity.x) < walk_speed:
+		velocity.y += gravity * delta
+		velocity.y = min(velocity.y, max_down_velocity)
 	
 	if Input.is_action_pressed("ui_left"):
 		velocity.x  = -walk_speed
@@ -39,6 +40,17 @@ func _physics_process(delta: float) -> void:
 		if remaining_jumps > 0:
 			remaining_jumps -= 1
 			velocity.y = -jump_velocity
+<<<<<<< Updated upstream
+=======
+	if Input.is_action_just_pressed("Dash") && dash_unlocked && remaining_dashes > 0:
+		if sprite.flip_h:
+			velocity.x = - dash_velocity
+		else:
+			velocity.x = dash_velocity
+		remaining_dashes -= 1
+		dashing = true
+		velocity.y = 0
+>>>>>>> Stashed changes
 	
 	move_and_slide()
 	handle_move_and_slide_collisions()
