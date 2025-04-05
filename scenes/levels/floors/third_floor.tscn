@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cjsohkrukjpih"]
+[gd_scene load_steps=12 format=4 uid="uid://cjsohkrukjpih"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_o6axi"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="2_j2ajy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_as2h6"]
 [ext_resource type="PackedScene" uid="uid://ciewj4sn7i43u" path="res://scenes/world_objects/spikes.tscn" id="5_o6axi"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_6cwsn"]
+[ext_resource type="Texture2D" uid="uid://c8dowiernnwd3" path="res://art/world_objects/Stalagtite.png" id="6_as2h6"]
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="7_j2ajy"]
 [ext_resource type="Texture2D" uid="uid://c7dinvgb1moy4" path="res://art/floor/DirtTile.png" id="8_408f1"]
 
@@ -2581,6 +2582,81 @@ respawn_pos = NodePath("../SpikeRespawn3")
 
 [node name="SpikeRespawn3" type="Node2D" parent="Spikes"]
 position = Vector2(6208, 1739)
+
+[node name="Decorations" type="Node" parent="."]
+
+[node name="Stalatite" type="Sprite2D" parent="Decorations"]
+position = Vector2(320, 961)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite2" type="Sprite2D" parent="Decorations"]
+position = Vector2(704, 960)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite3" type="Sprite2D" parent="Decorations"]
+position = Vector2(1216, 449)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite4" type="Sprite2D" parent="Decorations"]
+position = Vector2(1600, 576)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite5" type="Sprite2D" parent="Decorations"]
+position = Vector2(2368, 960)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite6" type="Sprite2D" parent="Decorations"]
+position = Vector2(1728, 1600)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite7" type="Sprite2D" parent="Decorations"]
+position = Vector2(3264, 960)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite8" type="Sprite2D" parent="Decorations"]
+position = Vector2(4288, 192)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite9" type="Sprite2D" parent="Decorations"]
+position = Vector2(5440, 321)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+flip_h = true
+
+[node name="Stalatite10" type="Sprite2D" parent="Decorations"]
+position = Vector2(5696, 321)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite11" type="Sprite2D" parent="Decorations"]
+position = Vector2(5568, 321)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+
+[node name="Stalatite12" type="Sprite2D" parent="Decorations"]
+position = Vector2(6720, 576)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+flip_h = true
+
+[node name="Stalatite13" type="Sprite2D" parent="Decorations"]
+position = Vector2(7872, 1088)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
+flip_h = true
+
+[node name="Stalatite14" type="Sprite2D" parent="Decorations"]
+position = Vector2(5952, 702)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_as2h6")
 
 [node name="Manhole" parent="." instance=ExtResource("6_6cwsn")]
 position = Vector2(8000, 1864)
