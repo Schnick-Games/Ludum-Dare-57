@@ -57,12 +57,6 @@ theme = ExtResource("1_gxyay")
 text = "Play
 "
 
-[node name="Options" type="Button" parent="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options"]
-layout_mode = 2
-theme = ExtResource("1_gxyay")
-text = "Options
-"
-
 [node name="Exit" type="Button" parent="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options"]
 layout_mode = 2
 theme = ExtResource("1_gxyay")
