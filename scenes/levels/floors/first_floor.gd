@@ -2,19 +2,25 @@
 extends Node2D
 
 @export var floor_tile_scene: PackedScene
-@export var repeat_x: int = 5
-@export var repeat_y: int = 5  # Adjust this as needed for height
+@export var repeat_x: int = 64
+@export var repeat_y: int = 16  # Adjust this as needed for height
 @export var tile_size: Vector2 = Vector2(128, 128)  # Tile size set to 128x128
+
+@export var entranceX: int = 1;
+@export var entranceY: int = 0;
+@export var exitX: int = repeat_x - 1;
+@export var exitY: int = repeat_y;
+
 
 func _ready():
 	for y in range(repeat_y):
 		for x in range(repeat_x):
 			# Skip the second tile on the top row for the player to drop in
-			if y == 0 and x == 1:
+			if y == entranceY and x == entranceX:
 				continue
 			
 			# Skip the tile one position to the right of the bottom-right corner
-			if y == repeat_y - 1 and x == repeat_x - 2:
+			if y == exitY and x == exitX:
 				continue
 			
 			# Check if the tile is part of the border (top, bottom, left, or right)
