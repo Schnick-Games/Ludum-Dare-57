@@ -87,6 +87,7 @@ size_flags_horizontal = 3
 [node name="TextureRect" type="TextureRect" parent="MainMenuContainer/HBoxContainer/CenterContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_0v4hy")
+flip_h = true
 
 [connection signal="pressed" from="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options/Exit" to="." method="_on_exit_pressed"]
