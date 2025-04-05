@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c07k3jva4brdo"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c07k3jva4brdo"]
+
+[ext_resource type="FontFile" uid="uid://d2d724igw8q65" path="res://fonts/comicbd.ttf" id="1_qnv5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnv5y"]
 content_margin_left = 5.0
@@ -32,7 +34,8 @@ corner_radius_bottom_left = 5
 Button/colors/font_color = Color(0.831319, 0.817839, 0.838124, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 4
-Button/font_sizes/font_size = 25
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_qnv5y")
 Button/styles/hover = SubResource("StyleBoxFlat_qnv5y")
 Button/styles/normal = SubResource("StyleBoxEmpty_kwhvy")
 Button/styles/pressed = SubResource("StyleBoxFlat_bpa63")
