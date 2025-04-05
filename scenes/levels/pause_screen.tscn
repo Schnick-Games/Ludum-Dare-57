@@ -1,18 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://gqgepvwrraa7"]
+[gd_scene load_steps=6 format=3 uid="uid://gqgepvwrraa7"]
 
 [ext_resource type="Texture2D" uid="uid://d1i8mj400bleg" path="res://art/pause_screen/paused.png" id="1_6hwjq"]
+[ext_resource type="Script" uid="uid://1tl3b0paf873" path="res://scripts/levels/pause_screen.gd" id="1_vhgo0"]
+[ext_resource type="Shader" uid="uid://clnaviaa8s1fy" path="res://shaders/blur.gdshader" id="2_8opjw"]
 [ext_resource type="Theme" uid="uid://c07k3jva4brdo" path="res://themes/button_theme.tres" id="2_vhgo0"]
 
-[node name="PauseScreen" type="Control"]
-layout_mode = 3
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_llhct"]
+shader = ExtResource("2_8opjw")
+shader_parameter/blur_amount = 2.0
+shader_parameter/tint = Color(0.152476, 0.152476, 0.152476, 0.858824)
+
+[node name="PauseScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_vhgo0")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_llhct")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.351563, 0.351563, 0.351563, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,8 +57,11 @@ theme = ExtResource("2_vhgo0")
 text = "Continue
 "
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/Menu Options"]
+[node name="QuitToMenu" type="Button" parent="MarginContainer/VBoxContainer/Menu Options"]
 layout_mode = 2
 theme = ExtResource("2_vhgo0")
-text = "Exit
+text = "Quit To Menu
 "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu Options/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu Options/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]
