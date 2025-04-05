@@ -20,7 +20,8 @@ var remaining_dashes: int = 1
 
 var touching_wall: bool = false
 var touching_floor: bool = false
-var dashing = false
+var dashing: bool = false
+var attacking: bool = false
 
 @export_group("Player Unlock")
 @export var double_jump_unlocked: bool = false:
@@ -44,9 +45,9 @@ func _ready() -> void:
 	sprite.play("idle")
 
 func _physics_process(delta: float) -> void:
-	velocity.y += gravity * delta
-	velocity.y = min(velocity.y, max_down_velocity)
-	
+	if !dashing || abs(velocity.x) < walk_speed:
+		velocity.y += gravity * delta
+		velocity.y = min(velocity.y, max_down_velocity)
 	
 	if dashing:
 		var direction: float = -1 if sprite.flip_h else 1
@@ -55,30 +56,38 @@ func _physics_process(delta: float) -> void:
 			dashing = false
 		else:
 			velocity.x -= decelarate_amount
-		
-	if !dashing || abs(velocity.x) < walk_speed:	
-		if Input.is_action_pressed("ui_left"):
-			velocity.x  = -walk_speed
-			sprite.flip_h = true
-			dashing = false
-		elif Input.is_action_pressed("ui_right"):
-			velocity.x = walk_speed
-			sprite.flip_h = false
-			dashing = false
-		elif !dashing:
-			velocity.x = 0
-	if Input.is_action_just_pressed("Jump"):
-		if remaining_jumps > 0:
-			remaining_jumps -= 1
-			velocity.y = -jump_velocity
-	if Input.is_action_just_pressed("Dash") && dash_unlocked && remaining_dashes > 0:
-		if sprite.flip_h:
-			velocity.x = - dash_velocity
-		else:
-			velocity.x = dash_velocity
-		remaining_dashes -= 1
-		dashing = true
 	
+	if !attacking:
+		if !dashing || abs(velocity.x) < walk_speed:	
+			if Input.is_action_pressed("ui_left"):
+				velocity.x  = -walk_speed
+				sprite.flip_h = true
+				dashing = false
+			elif Input.is_action_pressed("ui_right"):
+				velocity.x = walk_speed
+				sprite.flip_h = false
+				dashing = false
+			elif !dashing:
+				velocity.x = 0
+		if Input.is_action_just_pressed("Jump"):
+			if remaining_jumps > 0:
+				remaining_jumps -= 1
+				velocity.y = -jump_velocity
+		if Input.is_action_just_pressed("Dash") && dash_unlocked && remaining_dashes > 0:
+			if sprite.flip_h:
+				velocity.x = - dash_velocity
+			else:
+				velocity.x = dash_velocity
+			remaining_dashes -= 1
+			dashing = true
+			velocity.y = 0
+		
+		if Input.is_action_just_pressed("Attack") && !dashing:
+			sprite.play("attack forward")
+			$AttackTimer.start()
+			attacking = true
+			$AttackSounds.play()
+		
 	move_and_slide()
 	handle_move_and_slide_collisions()
 
@@ -96,6 +105,7 @@ func handle_move_and_slide_collisions():
 		remaining_jumps = max_jumps
 		if !touching_floor:
 			remaining_dashes = max_dash
+			$LandingSounds.play()
 		touching_floor = true
 	else:
 		touching_floor = false
@@ -109,3 +119,8 @@ func handle_move_and_slide_collisions():
 	else:
 		touching_wall = false
 		max_down_velocity = max_fall_velocity
+
+
+func _on_attack_timer_timeout() -> void:
+	sprite.play("idle")
+	attacking = false

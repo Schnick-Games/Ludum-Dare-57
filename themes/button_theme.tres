@@ -1,15 +1,6 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://c07k3jva4brdo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2gb5"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0.54902, 0.54902, 0.54902, 0.72549)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[ext_resource type="FontFile" uid="uid://d2d724igw8q65" path="res://fonts/comicbd.ttf" id="1_qnv5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnv5y"]
 content_margin_left = 5.0
@@ -40,10 +31,11 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [resource]
-Button/colors/font_color = Color(0.879059, 0.873126, 0.87696, 1)
+Button/colors/font_color = Color(0.831319, 0.817839, 0.838124, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/font_sizes/font_size = 25
-Button/styles/focus = SubResource("StyleBoxFlat_j2gb5")
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_qnv5y")
 Button/styles/hover = SubResource("StyleBoxFlat_qnv5y")
 Button/styles/normal = SubResource("StyleBoxEmpty_kwhvy")
 Button/styles/pressed = SubResource("StyleBoxFlat_bpa63")
