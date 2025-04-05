@@ -79,6 +79,6 @@ volume_db = -10.0
 
 [node name="LandingSounds" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_75vfm")
-volume_db = -25.0
+volume_db = -35.0
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

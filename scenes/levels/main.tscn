@@ -9,47 +9,92 @@
 script = ExtResource("1_2vj2h")
 
 [node name="Player" parent="." instance=ExtResource("1_72ix8")]
-position = Vector2(-5, -11)
+position = Vector2(69, 64)
 gravity = 981.0
 jump_velocity = 600.0
 dash_velocity = 1800.0
 horizontal_drag = 4000.0
-double_jump_unlocked = false
-wall_jump_unlocked = false
-wall_slide_unlocked = false
-dash_unlocked = false
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(5, 11)
 scale = Vector2(1.17727, 1.75693)
-limit_left = -1000
-limit_right = 1000
+limit_left = -64
+limit_right = 1664
 position_smoothing_enabled = true
 
-[node name="Floor" parent="." instance=ExtResource("3_y0acb")]
-position = Vector2(-1, 128)
+[node name="Node" type="Node" parent="."]
+
+[node name="Floor" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(320, 448)
 texture = ExtResource("4_j4d2a")
 
-[node name="Floor2" parent="." instance=ExtResource("3_y0acb")]
-position = Vector2(127, 128)
+[node name="Floor2" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(448, 448)
 texture = ExtResource("4_j4d2a")
 
-[node name="Floor3" parent="." instance=ExtResource("3_y0acb")]
-position = Vector2(-257, 128)
+[node name="Floor3" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(64, 448)
 texture = ExtResource("4_j4d2a")
 
-[node name="Floor4" parent="." instance=ExtResource("3_y0acb")]
-position = Vector2(-129, 128)
+[node name="Floor4" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(192, 448)
 texture = ExtResource("4_j4d2a")
 
-[node name="Wall" parent="." instance=ExtResource("3_y0acb")]
-position = Vector2(383, 128)
+[node name="Wall" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(704, 448)
 
-[node name="Wall2" parent="." instance=ExtResource("3_y0acb")]
-position = Vector2(383, 0)
+[node name="Wall2" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(704, 320)
 
-[node name="Wall3" parent="." instance=ExtResource("3_y0acb")]
-position = Vector2(383, -128)
+[node name="Wall3" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(704, 192)
 
-[node name="Wall4" parent="." instance=ExtResource("3_y0acb")]
-position = Vector2(383, -256)
+[node name="Wall4" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(704, -64)
+
+[node name="Floor5" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(960, 448)
+texture = ExtResource("4_j4d2a")
+
+[node name="Floor6" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(1088, 448)
+texture = ExtResource("4_j4d2a")
+
+[node name="Floor7" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(832, 448)
+texture = ExtResource("4_j4d2a")
+
+[node name="Floor8" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(1216, 448)
+texture = ExtResource("4_j4d2a")
+
+[node name="Floor9" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(1472, 448)
+texture = ExtResource("4_j4d2a")
+
+[node name="Floor10" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(1600, 448)
+texture = ExtResource("4_j4d2a")
+
+[node name="Floor11" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(1344, 448)
+texture = ExtResource("4_j4d2a")
+
+[node name="Floor12" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(1728, 448)
+texture = ExtResource("4_j4d2a")
+
+[node name="Wall5" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(-64, 448)
+
+[node name="Wall6" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(-64, 320)
+
+[node name="Wall7" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(-64, 192)
+
+[node name="Wall8" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(-64, 64)
+
+[node name="Wall9" parent="Node" instance=ExtResource("3_y0acb")]
+position = Vector2(-64, -64)
