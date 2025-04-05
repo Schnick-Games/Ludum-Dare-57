@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://8o13avdc125v"]
+[gd_scene load_steps=6 format=3 uid="uid://8o13avdc125v"]
 
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="1_20x7r"]
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scenes/levels/floors/first_floor.gd" id="1_638su"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="3_638su"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_a8j2g"]
+[ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="5_bkni2"]
 
 [node name="FirstFloor" type="Node2D"]
 script = ExtResource("1_638su")
@@ -2737,3 +2738,12 @@ position = Vector2(-64, -448)
 
 [node name="Floor856" parent="ObstacleContainer" instance=ExtResource("1_20x7r")]
 position = Vector2(8256, -448)
+
+[node name="Enemy" parent="." instance=ExtResource("5_bkni2")]
+position = Vector2(1472, 1345)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_bkni2")]
+position = Vector2(1792, 577)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_bkni2")]
+position = Vector2(2880, 1472)
