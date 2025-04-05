@@ -2545,13 +2545,13 @@ position = Vector2(7360, 1600)
 position = Vector2(6208, 1344)
 texture = ExtResource("4_xhitl")
 
-[node name="Floor123" parent="." instance=ExtResource("3_2h7tj")]
+[node name="Floor142" parent="ObstacleContainer" instance=ExtResource("3_2h7tj")]
 position = Vector2(6080, 1600)
 texture = ExtResource("4_xhitl")
 
-[node name="Floor124" parent="." instance=ExtResource("3_2h7tj")]
+[node name="Floor160" parent="ObstacleContainer" instance=ExtResource("3_2h7tj")]
 position = Vector2(5696, 1344)
 texture = ExtResource("4_xhitl")
 
-[node name="Floor484" parent="." instance=ExtResource("3_2h7tj")]
+[node name="Floor684" parent="ObstacleContainer" instance=ExtResource("3_2h7tj")]
 position = Vector2(192, -448)
