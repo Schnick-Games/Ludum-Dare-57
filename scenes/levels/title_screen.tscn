@@ -79,11 +79,16 @@ texture = SubResource("AtlasTexture_0v4hy")
 flip_h = true
 
 [node name="Schnick Games" type="HBoxContainer" parent="."]
-layout_mode = 2
-offset_left = 856.0
-offset_top = 622.0
-offset_right = 1156.0
-offset_bottom = 645.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -269.0
+offset_top = -42.0
+grow_horizontal = 0
+grow_vertical = 0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Schnick Games"]
@@ -93,6 +98,7 @@ expand_mode = 2
 
 [node name="Label2" type="Label" parent="Schnick Games"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Schnick Games"
 
 [connection signal="pressed" from="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options/Play" to="." method="_on_play_pressed"]
