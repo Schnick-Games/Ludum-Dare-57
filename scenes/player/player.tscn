@@ -29,6 +29,7 @@ animations = [{
 size = Vector2(20, 64.4215)
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(-1, -1)
 script = ExtResource("1_dovo2")
 gravity = 2000.0
 jump_velocity = 850.0
