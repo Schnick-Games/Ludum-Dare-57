@@ -11,10 +11,15 @@ config_version=5
 [application]
 
 config/name="LudumDare57"
-run/main_scene="uid://eqxmmfvmk4eo"
+run/main_scene="uid://bdk0l6fdsp1np"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="uid://eqxmmfvmk4eo"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 
