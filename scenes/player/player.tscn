@@ -33,6 +33,11 @@ position = Vector2(-1, -1)
 script = ExtResource("1_dovo2")
 gravity = 2000.0
 jump_velocity = 850.0
+horizontal_drag = 2000.0
+double_jump_unlocked = true
+wall_jump_unlocked = true
+wall_slide_unlocked = true
+dash_unlocked = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
