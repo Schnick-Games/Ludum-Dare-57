@@ -131,8 +131,10 @@ func attack():
 	
 	# raycast fun
 	ray_cast.force_raycast_update()
-	var enemy: Enemy = ray_cast.get_collider()
-	if is_instance_valid(enemy):
+	
+	var hit_object = ray_cast.get_collider()
+	if hit_object is Enemy:
+		var enemy: Enemy = hit_object
 		enemy.hit_enemy(ray_cast.target_position.normalized() * 300, 1)
 
 func _on_attack_timer_timeout() -> void:
