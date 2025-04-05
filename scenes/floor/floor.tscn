@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bunawsa54lutb"]
 
-[ext_resource type="Texture2D" uid="uid://c7dinvgb1moy4" path="res://art/floor/DirtTile.png" id="1_w0xbj"]
+[ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="1_w0xbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0xbj"]
 size = Vector2(127, 127)
