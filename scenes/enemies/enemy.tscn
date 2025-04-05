@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://claj6wcferre1"]
+
+[ext_resource type="Texture2D" uid="uid://danomhbmwpkec" path="res://art/enemies/cat/CatWalk-Sheet.png" id="1_6xk8f"]
+[ext_resource type="Script" uid="uid://kd17gguu8nb1" path="res://scripts/enemies/enemy.gd" id="1_8e3ao"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e3ao"]
+atlas = ExtResource("1_6xk8f")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38ino"]
+atlas = ExtResource("1_6xk8f")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ifyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e3ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38ino")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e3ao"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_8e3ao")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_4ifyv")
+animation = &"Walk"
+frame_progress = 0.741292
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(4.8, 2.6)
+shape = SubResource("RectangleShape2D_8e3ao")
+
+[node name="RagdollTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(39, 13)
+target_position = Vector2(5, 46)
+
+[connection signal="timeout" from="RagdollTimer" to="." method="_on_ragdoll_timer_timeout"]

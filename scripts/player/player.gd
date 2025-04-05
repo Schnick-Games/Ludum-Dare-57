@@ -38,9 +38,11 @@ var attacking: bool = false
 
 
 var sprite: AnimatedSprite2D
+var ray_cast: RayCast2D 
 
 func _ready() -> void:
 	sprite = $AnimatedSprite2D
+	ray_cast = $RayCast2D
 	
 	sprite.play("idle")
 
@@ -63,10 +65,14 @@ func _physics_process(delta: float) -> void:
 				velocity.x  = -walk_speed
 				sprite.flip_h = true
 				dashing = false
+				ray_cast.position.x = -abs(ray_cast.position.x)
+				ray_cast.target_position.x = -abs(ray_cast.target_position.x)
 			elif Input.is_action_pressed("ui_right"):
 				velocity.x = walk_speed
 				sprite.flip_h = false
 				dashing = false
+				ray_cast.position.x = abs(ray_cast.position.x)
+				ray_cast.target_position.x = abs(ray_cast.target_position.x)
 			elif !dashing:
 				velocity.x = 0
 		if Input.is_action_just_pressed("Jump"):
@@ -83,10 +89,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = 0
 		
 		if Input.is_action_just_pressed("Attack") && !dashing:
-			sprite.play("attack forward")
-			$AttackTimer.start()
-			attacking = true
-			$AttackSounds.play()
+			attack()
 		
 	move_and_slide()
 	handle_move_and_slide_collisions()
@@ -120,6 +123,17 @@ func handle_move_and_slide_collisions():
 		touching_wall = false
 		max_down_velocity = max_fall_velocity
 
+func attack():
+	sprite.play("attack forward")
+	$AttackTimer.start()
+	attacking = true
+	$AttackSounds.play()
+	
+	# raycast fun
+	ray_cast.force_raycast_update()
+	var enemy: Enemy = ray_cast.get_collider()
+	if is_instance_valid(enemy):
+		enemy.hit_enemy(ray_cast.target_position.normalized() * 300, 1)
 
 func _on_attack_timer_timeout() -> void:
 	sprite.play("idle")
