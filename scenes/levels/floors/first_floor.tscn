@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://8o13avdc125v"]
 
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="1_20x7r"]
-[ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scenes/levels/floors/first_floor.gd" id="1_638su"]
+[ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_638su"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="3_638su"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_a8j2g"]
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="5_bkni2"]
