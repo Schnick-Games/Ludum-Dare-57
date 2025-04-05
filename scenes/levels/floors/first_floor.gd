@@ -13,6 +13,10 @@ func _ready():
 			if y == 0 and x == 1:
 				continue
 			
+			# Skip the tile one position to the right of the bottom-right corner
+			if y == repeat_y - 1 and x == repeat_x - 2:
+				continue
+			
 			# Check if the tile is part of the border (top, bottom, left, or right)
 			if y == 0 or y == repeat_y - 1 or x == 0 or x == repeat_x - 1:
 				var tile = floor_tile_scene.instantiate()
