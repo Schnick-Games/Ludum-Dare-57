@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bunawsa54lutb"]
 
-[ext_resource type="Texture2D" uid="uid://drlhu55balpg3" path="res://icon.svg" id="1_w0xbj"]
+[ext_resource type="Texture2D" uid="uid://c7dinvgb1moy4" path="res://art/floor/DirtTile.png" id="1_w0xbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0xbj"]
 size = Vector2(127, 127)
@@ -12,4 +12,5 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_w0xbj")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_w0xbj")

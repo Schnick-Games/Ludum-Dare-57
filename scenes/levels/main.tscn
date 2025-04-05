@@ -7,10 +7,23 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_2vj2h")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("1_72ix8")]
 position = Vector2(-5, -11)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(5, 11)
+limit_left = -1000
+limit_right = 1000
+position_smoothing_enabled = true
+
 [node name="Floor" parent="." instance=ExtResource("3_y0acb")]
 position = Vector2(-1, 157)
+
+[node name="Floor2" parent="." instance=ExtResource("3_y0acb")]
+position = Vector2(127, 157)
+
+[node name="Floor3" parent="." instance=ExtResource("3_y0acb")]
+position = Vector2(-257, 157)
+
+[node name="Floor4" parent="." instance=ExtResource("3_y0acb")]
+position = Vector2(-129, 157)
