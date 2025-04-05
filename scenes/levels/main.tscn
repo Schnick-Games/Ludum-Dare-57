@@ -16,17 +16,6 @@ jump_velocity = 600.0
 dash_velocity = 1800.0
 horizontal_drag = 4000.0
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(5, 11)
-scale = Vector2(1.17727, 1.75693)
-limit_left = -64
-limit_right = 1664
-position_smoothing_enabled = true
-double_jump_unlocked = false
-wall_jump_unlocked = false
-wall_slide_unlocked = false
-dash_unlocked = false
-
 [node name="Node" type="Node" parent="."]
 
 [node name="Floor" parent="Node" instance=ExtResource("3_y0acb")]
