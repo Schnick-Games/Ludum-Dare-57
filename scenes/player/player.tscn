@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr4pxkvfvibf"]
+[gd_scene load_steps=7 format=3 uid="uid://esrlrw66x4vm"]
 
 [ext_resource type="Texture2D" uid="uid://dcos8tebajo6g" path="res://art/player/PlayerIdle-Sheet.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://cpqf35o3atire" path="res://scripts/player/player.gd" id="1_dovo2"]
@@ -21,13 +21,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_gmlin")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 3.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8afob"]
-radius = 39.0
-height = 206.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
+size = Vector2(20, 64.4215)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dovo2")
@@ -35,9 +34,10 @@ script = ExtResource("1_dovo2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_lvxji")
-frame_progress = 0.688891
+animation = &"idle"
+frame_progress = 0.697748
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CapsuleShape2D_8afob")
+position = Vector2(0, 16.5)
+scale = Vector2(2.54854, -1.47466)
+shape = SubResource("RectangleShape2D_dovo2")
