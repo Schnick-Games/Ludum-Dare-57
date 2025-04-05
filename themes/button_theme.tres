@@ -42,7 +42,7 @@ corner_radius_bottom_left = 5
 [resource]
 Button/colors/font_color = Color(0.879059, 0.873126, 0.87696, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/font_sizes/font_size = 32
+Button/font_sizes/font_size = 25
 Button/styles/focus = SubResource("StyleBoxFlat_j2gb5")
 Button/styles/hover = SubResource("StyleBoxFlat_qnv5y")
 Button/styles/normal = SubResource("StyleBoxEmpty_kwhvy")

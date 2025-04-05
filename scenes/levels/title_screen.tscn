@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdk0l6fdsp1np"]
+[gd_scene load_steps=5 format=3 uid="uid://bdk0l6fdsp1np"]
 
 [ext_resource type="Theme" uid="uid://c07k3jva4brdo" path="res://themes/button_theme.tres" id="1_gxyay"]
+[ext_resource type="Texture2D" uid="uid://byudooi2bewj0" path="res://art/title_screen/logo.png" id="1_sihr5"]
 [ext_resource type="Texture2D" uid="uid://dcos8tebajo6g" path="res://art/player/PlayerIdle-Sheet.png" id="1_upj3s"]
 [ext_resource type="Texture2D" uid="uid://d3p0qlqh50nf8" path="res://art/Phil.png" id="2_w8mqq"]
 
@@ -19,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.290196)
+color = Color(0.109804, 0.109804, 0.109804, 0.160784)
 
 [node name="MainMenuContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -39,9 +40,9 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenuContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MainMenuContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MainMenuContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Moleman's Manhole Mayhem"
+texture = ExtResource("1_sihr5")
 
 [node name="Menu Options" type="VBoxContainer" parent="MainMenuContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
