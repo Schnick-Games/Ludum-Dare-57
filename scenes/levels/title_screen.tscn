@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdk0l6fdsp1np"]
+[gd_scene load_steps=6 format=3 uid="uid://bdk0l6fdsp1np"]
 
+[ext_resource type="Script" uid="uid://r8clovtqougx" path="res://scripts/levels/title_screen.gd" id="1_0v4hy"]
 [ext_resource type="Theme" uid="uid://c07k3jva4brdo" path="res://themes/button_theme.tres" id="1_gxyay"]
 [ext_resource type="Texture2D" uid="uid://byudooi2bewj0" path="res://art/title_screen/logo.png" id="1_sihr5"]
 [ext_resource type="Texture2D" uid="uid://dcos8tebajo6g" path="res://art/player/PlayerIdle-Sheet.png" id="1_upj3s"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0v4hy")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -87,3 +89,6 @@ size_flags_horizontal = 3
 [node name="TextureRect" type="TextureRect" parent="MainMenuContainer/HBoxContainer/CenterContainer"]
 layout_mode = 2
 texture = ExtResource("1_upj3s")
+
+[connection signal="pressed" from="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options/Exit" to="." method="_on_exit_pressed"]
