@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+var health_scene: Health = preload("res://scenes/game_hud/health.tscn").instantiate() #TODO: Maybe move elsewhere
+
 @export var gravity: float = 981.0
 @export var walk_speed: float = 500.0
 @export var jump_velocity: float = 600.0
@@ -22,6 +24,9 @@ var touching_wall: bool = false
 var touching_floor: bool = false
 var dashing: bool = false
 var attacking: bool = false
+
+@export var max_health: int = 3
+var health = max_health
 
 @export_group("Player Unlock")
 @export var double_jump_unlocked: bool = false:
@@ -45,6 +50,9 @@ func _ready() -> void:
 	ray_cast = $RayCast2D
 	
 	sprite.play("idle")
+	
+	health_scene.setup_health(get_node("."))
+	get_tree().root.add_child(health_scene)
 
 func _physics_process(delta: float) -> void:
 	if !dashing || abs(velocity.x) < walk_speed:
@@ -140,3 +148,12 @@ func attack():
 func _on_attack_timer_timeout() -> void:
 	sprite.play("idle")
 	attacking = false
+	
+func damage_player(damage: int):
+	health -= damage
+	if health <= 0:
+		die()
+		
+func die():
+	#TODO: PLAYER DIE
+	pass
