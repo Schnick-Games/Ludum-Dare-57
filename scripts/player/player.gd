@@ -44,8 +44,9 @@ func _ready() -> void:
 	sprite.play("idle")
 
 func _physics_process(delta: float) -> void:
-	velocity.y += gravity * delta
-	velocity.y = min(velocity.y, max_down_velocity)
+	if !dashing || abs(velocity.x) < walk_speed:
+		velocity.y += gravity * delta
+		velocity.y = min(velocity.y, max_down_velocity)
 	
 	
 	if dashing:
@@ -78,6 +79,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = dash_velocity
 		remaining_dashes -= 1
 		dashing = true
+		velocity.y = 0
 	
 	move_and_slide()
 	handle_move_and_slide_collisions()
