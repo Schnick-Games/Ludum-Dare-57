@@ -24,6 +24,7 @@ var touching_wall: bool = false
 var touching_floor: bool = false
 var dashing: bool = false
 var attacking: bool = false
+var jumping: bool = false
 
 @export var max_health: int = 3
 var health = max_health
@@ -89,6 +90,7 @@ func _physics_process(delta: float) -> void:
 			if remaining_jumps > 0:
 				remaining_jumps -= 1
 				velocity.y = -jump_velocity
+				jumping = true
 		if Input.is_action_just_pressed("Dash") && dash_unlocked && remaining_dashes > 0:
 			if sprite.flip_h:
 				velocity.x = - dash_velocity
@@ -120,7 +122,11 @@ func handle_move_and_slide_collisions():
 			remaining_dashes = max_dash
 			$LandingSounds.play()
 		touching_floor = true
+		jumping = false
 	else:
+		if touching_floor == true && jumping == false:
+			jumping = true
+			remaining_jumps -= 1
 		touching_floor = false
 	if wall_collision:
 		if wall_slide_unlocked:
