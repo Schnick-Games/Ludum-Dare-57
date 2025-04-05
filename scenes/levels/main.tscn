@@ -22,6 +22,10 @@ scale = Vector2(1.17727, 1.75693)
 limit_left = -64
 limit_right = 1664
 position_smoothing_enabled = true
+double_jump_unlocked = false
+wall_jump_unlocked = false
+wall_slide_unlocked = false
+dash_unlocked = false
 
 [node name="Node" type="Node" parent="."]
 
