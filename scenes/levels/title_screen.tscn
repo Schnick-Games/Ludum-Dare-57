@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdk0l6fdsp1np"]
+[gd_scene load_steps=12 format=3 uid="uid://bdk0l6fdsp1np"]
 
 [ext_resource type="Script" uid="uid://r8clovtqougx" path="res://scripts/levels/title_screen.gd" id="1_0v4hy"]
 [ext_resource type="Theme" uid="uid://c07k3jva4brdo" path="res://themes/button_theme.tres" id="1_gxyay"]
 [ext_resource type="Texture2D" uid="uid://byudooi2bewj0" path="res://art/title_screen/logo.png" id="1_sihr5"]
 [ext_resource type="Texture2D" uid="uid://dcos8tebajo6g" path="res://art/player/PlayerIdle-Sheet.png" id="1_upj3s"]
-[ext_resource type="Shader" path="res://shaders/scroll.gdshader" id="2_83e8j"]
+[ext_resource type="Shader" uid="uid://dc558183lxysj" path="res://shaders/scroll.gdshader" id="2_83e8j"]
 [ext_resource type="Texture2D" uid="uid://d3p0qlqh50nf8" path="res://art/Phil.png" id="2_w8mqq"]
 [ext_resource type="Texture2D" uid="uid://b2kenst544hw0" path="res://art/title_screen/background_seperate.png" id="3_ja88k"]
 [ext_resource type="Texture2D" uid="uid://cqfkol14gxpl8" path="res://art/title_screen/background_floor.png" id="4_11s75"]
+[ext_resource type="AudioStream" uid="uid://bfmcmy4adwlb0" path="res://audio/music/Moleman's Manhole Mayhem Main Menu.mp3" id="9_11s75"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_83e8j"]
 shader = ExtResource("2_83e8j")
@@ -121,6 +122,12 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 30
 text = "Schnick Games"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_11s75")
+volume_db = -30.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options/Exit" to="." method="_on_exit_pressed"]
