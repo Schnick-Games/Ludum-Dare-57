@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://esrlrw66x4vm"]
+[gd_scene load_steps=12 format=3 uid="uid://esrlrw66x4vm"]
 
 [ext_resource type="Texture2D" uid="uid://dcos8tebajo6g" path="res://art/player/PlayerIdle-Sheet.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://cpqf35o3atire" path="res://scripts/player/player.gd" id="1_dovo2"]
+[ext_resource type="Texture2D" uid="uid://2iewp10dqf2r" path="res://art/player/PlayerAttackForward.png" id="2_gmlin"]
+[ext_resource type="AudioStream" uid="uid://csackjxod5gsr" path="res://audio/player/attack/MolemanAttack3.wav" id="4_p47bc"]
+[ext_resource type="AudioStream" uid="uid://da7ur63lq0db0" path="res://audio/player/landing/Landing1.wav" id="5_p47bc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("1_8afob")
@@ -13,6 +16,14 @@ region = Rect2(256, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lvxji"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gmlin")
+}],
+"loop": true,
+"name": &"attack forward",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dovo2")
@@ -28,8 +39,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(20, 64.4215)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gmlin"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("4_p47bc")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_75vfm"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("5_p47bc")
+
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(-1, -1)
 script = ExtResource("1_dovo2")
 gravity = 2000.0
 jump_velocity = 850.0
@@ -42,10 +62,23 @@ dash_unlocked = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_lvxji")
-animation = &"idle"
-frame_progress = 0.697748
+animation = &"attack forward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16.5)
 scale = Vector2(2.54854, -1.47466)
 shape = SubResource("RectangleShape2D_dovo2")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="AttackSounds" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_gmlin")
+volume_db = -10.0
+
+[node name="LandingSounds" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_75vfm")
+volume_db = -25.0
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
