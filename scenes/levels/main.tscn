@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://eqxmmfvmk4eo"]
+[gd_scene load_steps=7 format=3 uid="uid://eqxmmfvmk4eo"]
 
 [ext_resource type="Script" uid="uid://c80tvjewymgt5" path="res://scripts/levels/main.gd" id="1_2vj2h"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="1_72ix8"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_y0acb"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_j4d2a"]
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="5_u81e1"]
+[ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_b6bv0"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2vj2h")
@@ -97,3 +98,6 @@ position = Vector2(1728, 321)
 
 [node name="Enemy" parent="." instance=ExtResource("5_u81e1")]
 position = Vector2(128, 294)
+
+[node name="Manhole" parent="." instance=ExtResource("6_b6bv0")]
+position = Vector2(576, 329)

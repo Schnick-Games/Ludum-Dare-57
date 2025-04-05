@@ -84,7 +84,7 @@ volume_db = -35.0
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(28, 42)
 enabled = false
-target_position = Vector2(37, -20)
+target_position = Vector2(64, -33)
 hit_from_inside = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
