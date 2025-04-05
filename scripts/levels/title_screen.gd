@@ -1,6 +1,7 @@
 extends Control
 
 var main_scene = preload("res://scenes/levels/main.tscn").instantiate()
+var pause_scene = preload("res://scenes/levels/pause_screen.tscn").instantiate()
 var seconds = 0.0
 
 func _process(delta: float) -> void:
@@ -13,6 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_play_pressed() -> void:
 	get_tree().root.add_child(main_scene)
+	get_tree().root.add_child(pause_scene)
 	queue_free()
 
 

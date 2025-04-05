@@ -6,14 +6,35 @@ extends CharacterBody2D
 @export var jump_velocity: float = 600.0
 @export var max_fall_velocity: float = 2000
 @export var slide_velocity: float = 150.0
+@export var dash_velocity: float = 850.0
+#for dash
+@export var horizontal_drag: float = 850.0
 
 var max_down_velocity: float = max_fall_velocity
 
-@export var max_jumps: int = 2
+@export var max_jumps: int = 1
+@export var max_dash: int = 1
 @export var max_jumps_from_slide: int = 1
 var remaining_jumps: int = 1
+var remaining_dashes: int = 1
 
 var touching_wall: bool = false
+var touching_floor: bool = false
+var dashing = false
+
+@export_group("Player Unlock")
+@export var double_jump_unlocked: bool = false:
+	set(b):
+		double_jump_unlocked = b
+		if b:
+			max_jumps = 2
+		else:
+			max_jumps = 1
+@export var wall_jump_unlocked: bool = false
+@export var wall_slide_unlocked: bool = false
+@export var dash_unlocked: bool = false
+@export_group("")
+
 
 var sprite: AnimatedSprite2D
 
@@ -27,15 +48,26 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 		velocity.y = min(velocity.y, max_down_velocity)
 	
-	if Input.is_action_pressed("ui_left"):
-		velocity.x  = -walk_speed
-		sprite.flip_h = true
-	elif Input.is_action_pressed("ui_right"):
-		velocity.x = walk_speed
-		sprite.flip_h = false
-	else:
-		velocity.x = 0
 	
+	if dashing:
+		var direction: float = -1 if sprite.flip_h else 1
+		var decelarate_amount: float = direction * horizontal_drag * delta
+		if abs(decelarate_amount) > abs(velocity.x):
+			dashing = false
+		else:
+			velocity.x -= decelarate_amount
+		
+	if !dashing || abs(velocity.x) < walk_speed:	
+		if Input.is_action_pressed("ui_left"):
+			velocity.x  = -walk_speed
+			sprite.flip_h = true
+			dashing = false
+		elif Input.is_action_pressed("ui_right"):
+			velocity.x = walk_speed
+			sprite.flip_h = false
+			dashing = false
+		elif !dashing:
+			velocity.x = 0
 	if Input.is_action_just_pressed("Jump"):
 		if remaining_jumps > 0:
 			remaining_jumps -= 1
@@ -67,10 +99,17 @@ func handle_move_and_slide_collisions():
 	
 	if floor_collision:
 		remaining_jumps = max_jumps
+		if !touching_floor:
+			remaining_dashes = max_dash
+		touching_floor = true
+	else:
+		touching_floor = false
 	if wall_collision:
-		max_down_velocity = slide_velocity
+		if wall_slide_unlocked:
+			max_down_velocity = slide_velocity
 		if !touching_wall:
-			remaining_jumps = max(remaining_jumps, max_jumps_from_slide)
+			if wall_jump_unlocked:
+				remaining_jumps = max(remaining_jumps, max_jumps_from_slide)
 			touching_wall = true
 	else:
 		touching_wall = false
