@@ -10,8 +10,6 @@ script = ExtResource("1_2vj2h")
 
 [node name="Player" parent="." instance=ExtResource("1_72ix8")]
 position = Vector2(-5, -11)
-<<<<<<< Updated upstream
-=======
 gravity = 981.0
 jump_velocity = 600.0
 dash_velocity = 1800.0
@@ -20,7 +18,6 @@ double_jump_unlocked = false
 wall_jump_unlocked = false
 wall_slide_unlocked = false
 dash_unlocked = false
->>>>>>> Stashed changes
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(5, 11)
