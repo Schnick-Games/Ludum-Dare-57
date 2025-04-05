@@ -47,6 +47,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MainMenuContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 350)
 layout_mode = 2
 texture = ExtResource("1_sihr5")
 
@@ -67,27 +68,32 @@ theme = ExtResource("1_gxyay")
 text = "Exit
 "
 
-[node name="Schnick Games" type="HBoxContainer" parent="MainMenuContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="MainMenuContainer/HBoxContainer/VBoxContainer/Schnick Games"]
-layout_mode = 2
-texture = ExtResource("2_w8mqq")
-expand_mode = 2
-
-[node name="Label2" type="Label" parent="MainMenuContainer/HBoxContainer/VBoxContainer/Schnick Games"]
-layout_mode = 2
-text = "Schnick Games"
-
 [node name="CenterContainer" type="CenterContainer" parent="MainMenuContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="MainMenuContainer/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 texture = SubResource("AtlasTexture_0v4hy")
 flip_h = true
+
+[node name="Schnick Games" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 856.0
+offset_top = 622.0
+offset_right = 1156.0
+offset_bottom = 645.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Schnick Games"]
+layout_mode = 2
+texture = ExtResource("2_w8mqq")
+expand_mode = 2
+
+[node name="Label2" type="Label" parent="Schnick Games"]
+layout_mode = 2
+text = "Schnick Games"
 
 [connection signal="pressed" from="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenuContainer/HBoxContainer/VBoxContainer/Menu Options/Exit" to="." method="_on_exit_pressed"]
