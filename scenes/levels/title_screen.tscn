@@ -1,11 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdk0l6fdsp1np"]
+[gd_scene load_steps=11 format=3 uid="uid://bdk0l6fdsp1np"]
 
 [ext_resource type="Script" uid="uid://r8clovtqougx" path="res://scripts/levels/title_screen.gd" id="1_0v4hy"]
 [ext_resource type="Theme" uid="uid://c07k3jva4brdo" path="res://themes/button_theme.tres" id="1_gxyay"]
 [ext_resource type="Texture2D" uid="uid://byudooi2bewj0" path="res://art/title_screen/logo.png" id="1_sihr5"]
 [ext_resource type="Texture2D" uid="uid://dcos8tebajo6g" path="res://art/player/PlayerIdle-Sheet.png" id="1_upj3s"]
-[ext_resource type="Texture2D" uid="uid://brvgmmcmqk26x" path="res://art/title_screen/background.png" id="2_jiqe5"]
+[ext_resource type="Shader" uid="uid://dc558183lxysj" path="res://shaders/scroll.gdshader" id="2_83e8j"]
 [ext_resource type="Texture2D" uid="uid://d3p0qlqh50nf8" path="res://art/Phil.png" id="2_w8mqq"]
+[ext_resource type="Texture2D" uid="uid://b2kenst544hw0" path="res://art/title_screen/background_seperate.png" id="3_ja88k"]
+[ext_resource type="Texture2D" uid="uid://cqfkol14gxpl8" path="res://art/title_screen/background_floor.png" id="4_11s75"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_83e8j"]
+shader = ExtResource("2_83e8j")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0v4hy"]
 atlas = ExtResource("1_upj3s")
@@ -20,23 +25,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0v4hy")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.109804, 0.109804, 0.109804, 0.160784)
-
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_83e8j")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jiqe5")
+texture = ExtResource("3_ja88k")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_11s75")
 
 [node name="MainMenuContainer" type="MarginContainer" parent="."]
 layout_mode = 1
