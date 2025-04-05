@@ -28,6 +28,8 @@ var attacking: bool = false
 @export var max_health: int = 3
 var health = max_health
 
+var invincible: bool = false
+
 @export_group("Player Unlock")
 @export var double_jump_unlocked: bool = false:
 	set(b):
@@ -150,10 +152,16 @@ func _on_attack_timer_timeout() -> void:
 	attacking = false
 	
 func damage_player(damage: int):
-	health -= damage
-	if health <= 0:
-		die()
+	if !invincible:
+		health -= damage
+		if health <= 0:
+			die()
+		invincible = true
+		$InvincibilityTimer.start()
 		
 func die():
 	#TODO: PLAYER DIE
 	pass
+
+func _on_invincibility_timer_timeout() -> void:
+	invincible = false

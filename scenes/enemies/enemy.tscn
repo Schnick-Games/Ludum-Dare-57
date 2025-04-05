@@ -48,4 +48,8 @@ one_shot = true
 position = Vector2(39, 13)
 target_position = Vector2(5, 46)
 
+[node name="AttackRaycast" type="RayCast2D" parent="."]
+position = Vector2(50, -3)
+target_position = Vector2(11, 0)
+
 [connection signal="timeout" from="RagdollTimer" to="." method="_on_ragdoll_timer_timeout"]

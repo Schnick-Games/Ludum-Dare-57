@@ -6,5 +6,5 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var player: Player = body
-		# damage player
+		player.damage_player(1)
 		player.position = respawn_pos.position
