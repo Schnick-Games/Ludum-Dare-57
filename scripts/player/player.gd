@@ -173,13 +173,16 @@ func _on_attack_timer_timeout() -> void:
 	sprite.play("idle")
 	attacking = false
 	
-func damage_player(damage: int):
+# returns false if this killed the player
+func damage_player(damage: int) -> bool:
 	if !invincible:
 		health -= damage
 		if health <= 0:
 			die()
+			return false
 		invincible = true
 		$InvincibilityTimer.start()
+	return true
 		
 func die():
 	queue_free()

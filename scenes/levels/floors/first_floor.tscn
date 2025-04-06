@@ -2738,8 +2738,10 @@ position = Vector2(1472, 1345)
 [node name="Enemy2" parent="." instance=ExtResource("5_bkni2")]
 position = Vector2(1792, 577)
 
-[node name="Enemy3" parent="." instance=ExtResource("5_bkni2")]
+[node name="Enemy3" parent="." node_paths=PackedStringArray("manhole") instance=ExtResource("5_bkni2")]
 position = Vector2(2880, 1472)
+manhole = NodePath("../Manhole")
+drops_key = true
 
 [node name="Manhole" parent="." instance=ExtResource("6_8ls8h")]
 position = Vector2(8000, 1864)

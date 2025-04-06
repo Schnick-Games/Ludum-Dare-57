@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://diaf7d8sfmw14"]
+[gd_scene load_steps=8 format=3 uid="uid://diaf7d8sfmw14"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_s0fox"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="2_sbsaq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_hyxta"]
 [ext_resource type="PackedScene" uid="uid://chvmoijr3oxsi" path="res://scenes/enemies/dummy.tscn" id="5_3xnqy"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_s0fox"]
+[ext_resource type="PackedScene" uid="uid://d3ah52l2mwlyb" path="res://scenes/items/key.tscn" id="7_sbsaq"]
 
 [node name="TopFloor" type="Node2D"]
 script = ExtResource("1_s0fox")
@@ -912,10 +913,10 @@ to jump"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Tutorial Text"]
-offset_left = 1600.0
-offset_top = -703.0
-offset_right = 2230.0
-offset_bottom = -466.0
+offset_left = 1414.0
+offset_top = -819.0
+offset_right = 2044.0
+offset_bottom = -582.0
 theme_override_font_sizes/font_size = 40
 text = "Attack with E
  or Left Click
@@ -923,10 +924,10 @@ text = "Attack with E
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="Tutorial Text"]
-offset_left = 1088.0
-offset_top = -704.0
-offset_right = 1718.0
-offset_bottom = -467.0
+offset_left = 1795.0
+offset_top = -639.0
+offset_right = 2425.0
+offset_bottom = -402.0
 theme_override_font_sizes/font_size = 30
 text = "Tip: Attack dangerous enemies
 from the back to avoid getting hurt!"
@@ -942,8 +943,22 @@ text = "Jump down the man hole to begin
 your adventure!"
 horizontal_alignment = 1
 
+[node name="Label6" type="Label" parent="Tutorial Text"]
+offset_left = 488.0
+offset_top = -718.0
+offset_right = 1118.0
+offset_bottom = -481.0
+theme_override_font_sizes/font_size = 30
+text = "Special enemies will drop
+a key to unlock the next floor"
+horizontal_alignment = 1
+
 [node name="Dummy" parent="." instance=ExtResource("5_3xnqy")]
 position = Vector2(1728, -597)
 
 [node name="Manhole" parent="." instance=ExtResource("6_s0fox")]
 position = Vector2(192, -567)
+
+[node name="Key" parent="." node_paths=PackedStringArray("manhole") instance=ExtResource("7_sbsaq")]
+position = Vector2(794, -584)
+manhole = NodePath("../Manhole")

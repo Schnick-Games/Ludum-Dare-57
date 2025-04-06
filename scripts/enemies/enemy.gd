@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 var sprite: AnimatedSprite2D
 
+const KEY_RESOURCE: Resource = preload("res://scenes/items/key.tscn")
+
 @export var gravity: float = 2000
 @export var walk_speed: float = 500.0
 @export var max_fall_velocity: float = 2000
@@ -14,9 +16,14 @@ var health = max_health
 var angular_velocity = 0
 var rag_dolling: bool = false
 
+@export var manhole: ManHole
+@export var drops_key: bool = false
+
 func _ready() -> void:
 	sprite = $AnimatedSprite2D
 	sprite.play("Walk")
+	if drops_key:
+		$Sparkle.emitting = true
 
 func _physics_process(delta: float) -> void:
 	rotation_degrees += angular_velocity * delta
@@ -63,6 +70,11 @@ func damage_enemy(damage: int):
 		die()
 
 func die():
+	if drops_key:
+		var key: Key = KEY_RESOURCE.instantiate()
+		key.position = position
+		key.manhole = manhole
+		get_parent().add_child(key)
 	queue_free()
 
 func _on_ragdoll_timer_timeout() -> void:

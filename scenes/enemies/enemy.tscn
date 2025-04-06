@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://claj6wcferre1"]
+[gd_scene load_steps=8 format=3 uid="uid://claj6wcferre1"]
 
 [ext_resource type="Texture2D" uid="uid://danomhbmwpkec" path="res://art/enemies/cat/CatWalk-Sheet.png" id="1_6xk8f"]
 [ext_resource type="Script" uid="uid://kd17gguu8nb1" path="res://scripts/enemies/enemy.gd" id="1_8e3ao"]
+[ext_resource type="PackedScene" uid="uid://cu76y5gilhqw2" path="res://scenes/particle_effects/sparkle.tscn" id="3_38ino"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8e3ao"]
 atlas = ExtResource("1_6xk8f")
@@ -52,5 +53,11 @@ target_position = Vector2(5, 46)
 [node name="AttackRaycast" type="RayCast2D" parent="."]
 position = Vector2(50, -3)
 target_position = Vector2(11, 0)
+
+[node name="Sparkle" parent="." instance=ExtResource("3_38ino")]
+scale = Vector2(0.5, 0.5)
+emitting = false
+scale_amount_min = 0.2
+scale_amount_max = 0.6
 
 [connection signal="timeout" from="RagdollTimer" to="." method="_on_ragdoll_timer_timeout"]
