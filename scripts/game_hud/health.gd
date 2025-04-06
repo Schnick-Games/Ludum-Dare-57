@@ -14,12 +14,17 @@ func _process(delta: float) -> void:
 	for i in player.max_health:
 		if i >= player.health:
 			icons[i].texture = health_empty_ico
+		else:
+			icons[i].texture = health_ico
 			
 	
 func create_health_bar():
 	var icon: TextureRect = TextureRect.new()
 	$HBoxContainer.add_child(icon)
 	icon.texture = health_ico
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon.custom_minimum_size = Vector2(55, 55)
 	icons.push_back(icon)
 	pass
 	
