@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 func _ready() -> void:
-	set_open_state(true)
+	set_open_state(false)
 
 func set_open_state(open: bool):
 	if open:

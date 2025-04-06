@@ -1,15 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://diaf7d8sfmw14"]
+[gd_scene load_steps=7 format=3 uid="uid://diaf7d8sfmw14"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_s0fox"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="2_sbsaq"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_li1pt"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_hyxta"]
+[ext_resource type="PackedScene" uid="uid://chvmoijr3oxsi" path="res://scenes/enemies/dummy.tscn" id="5_3xnqy"]
+[ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_s0fox"]
 
 [node name="TopFloor" type="Node2D"]
 script = ExtResource("1_s0fox")
 
 [node name="Player" parent="." instance=ExtResource("2_sbsaq")]
-position = Vector2(1856, -704)
+position = Vector2(3456, -576)
 max_health = 5
 double_jump_unlocked = false
 wall_jump_unlocked = false
@@ -700,7 +702,7 @@ position = Vector2(3136, -448)
 texture = ExtResource("4_hyxta")
 
 [node name="Floor1011" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
-position = Vector2(2496, -448)
+position = Vector2(4032, -831)
 texture = ExtResource("4_hyxta")
 
 [node name="Floor1012" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
@@ -764,7 +766,7 @@ position = Vector2(4416, -448)
 texture = ExtResource("4_hyxta")
 
 [node name="Floor1027" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
-position = Vector2(4032, -448)
+position = Vector2(2496, -701)
 texture = ExtResource("4_hyxta")
 
 [node name="Floor1028" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
@@ -856,9 +858,92 @@ position = Vector2(7104, -448)
 texture = ExtResource("4_hyxta")
 
 [node name="Floor1050" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
-position = Vector2(-64, -448)
+position = Vector2(-64, -832)
 texture = ExtResource("4_hyxta")
 
 [node name="Floor1051" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(8256, -448)
 texture = ExtResource("4_hyxta")
+
+[node name="Floor1053" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
+position = Vector2(2496, -574)
+
+[node name="Floor1054" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
+position = Vector2(2496, -446)
+
+[node name="Floor1052" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
+position = Vector2(-64, -448)
+
+[node name="Floor1055" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
+position = Vector2(-64, -576)
+
+[node name="Floor1056" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
+position = Vector2(-64, -704)
+
+[node name="Floor1057" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
+position = Vector2(4032, -448)
+
+[node name="Floor1058" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
+position = Vector2(4032, -576)
+
+[node name="Floor1059" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
+position = Vector2(4032, -704)
+
+[node name="Tutorial Text" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Tutorial Text"]
+offset_left = 3264.0
+offset_top = -768.0
+offset_right = 3605.0
+offset_bottom = -651.0
+theme_override_font_sizes/font_size = 40
+text = "Move with
+WASD"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Tutorial Text"]
+offset_left = 2496.0
+offset_top = -768.0
+offset_right = 2894.0
+offset_bottom = -651.0
+theme_override_font_sizes/font_size = 40
+text = "Press Space
+to jump"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Tutorial Text"]
+offset_left = 1600.0
+offset_top = -703.0
+offset_right = 2230.0
+offset_bottom = -466.0
+theme_override_font_sizes/font_size = 40
+text = "Attack with E
+ or Left Click
+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Tutorial Text"]
+offset_left = 1088.0
+offset_top = -704.0
+offset_right = 1718.0
+offset_bottom = -467.0
+theme_override_font_sizes/font_size = 30
+text = "Tip: Attack dangerous enemies
+from the back to avoid getting hurt!"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Tutorial Text"]
+offset_left = -64.0
+offset_top = -765.0
+offset_right = 566.0
+offset_bottom = -528.0
+theme_override_font_sizes/font_size = 30
+text = "Jump down the man hole to begin
+your adventure!"
+horizontal_alignment = 1
+
+[node name="Dummy" parent="." instance=ExtResource("5_3xnqy")]
+position = Vector2(1728, -597)
+
+[node name="Manhole" parent="." instance=ExtResource("6_s0fox")]
+position = Vector2(192, -567)
