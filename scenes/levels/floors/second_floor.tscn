@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://drd0l5uopfegc"]
+[gd_scene load_steps=8 format=3 uid="uid://drd0l5uopfegc"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_4scyc"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_2h7tj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_xhitl"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="5_liteb"]
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="6_2h7tj"]
+[ext_resource type="PackedScene" uid="uid://c11kto2ehl07o" path="res://scenes/items/heal_item.tscn" id="7_2h7tj"]
 
 [node name="Second Floor" type="Node2D"]
 script = ExtResource("1_4scyc")
@@ -2575,3 +2576,15 @@ position = Vector2(192, 1865)
 position = Vector2(1674, 554)
 manhole = NodePath("../Manhole")
 drops_key = true
+
+[node name="HealItem" parent="." instance=ExtResource("7_2h7tj")]
+position = Vector2(6841, 1501)
+
+[node name="HealItem2" parent="." instance=ExtResource("7_2h7tj")]
+position = Vector2(5036, 1366)
+
+[node name="HealItem3" parent="." instance=ExtResource("7_2h7tj")]
+position = Vector2(187, 337)
+
+[node name="HealItem4" parent="." instance=ExtResource("7_2h7tj")]
+position = Vector2(823, 1747)
