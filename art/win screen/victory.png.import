@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r63tcuqa4ftr"
-path="res://.godot/imported/big_chungus2.png-d5efea0649cf36c725c5f54bf9841379.ctex"
+uid="uid://cll3geqsrecic"
+path="res://.godot/imported/victory.png-5e149e85b8493d1f7e103c30bb4bc0af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemies/chungus/big_chungus2.png"
-dest_files=["res://.godot/imported/big_chungus2.png-d5efea0649cf36c725c5f54bf9841379.ctex"]
+source_file="res://art/win screen/victory.png"
+dest_files=["res://.godot/imported/victory.png-5e149e85b8493d1f7e103c30bb4bc0af.ctex"]
 
 [params]
 
