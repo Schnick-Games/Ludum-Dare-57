@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfv8y08vtqo8u"]
+
+[ext_resource type="Texture2D" uid="uid://c6ltqs8ecbkdd" path="res://art/enemies/boss/Boss-Sheet.png" id="1_1ex25"]
+[ext_resource type="Script" uid="uid://c3sq76nqneyvo" path="res://scripts/enemies/boss/boss.gd" id="1_3uc6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uc6t"]
+atlas = ExtResource("1_1ex25")
+region = Rect2(0, 0, 1024, 2560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub7yk"]
+atlas = ExtResource("1_1ex25")
+region = Rect2(1024, 0, 1024, 2560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ian0n"]
+atlas = ExtResource("1_1ex25")
+region = Rect2(2048, 0, 1024, 2560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yye4w"]
+atlas = ExtResource("1_1ex25")
+region = Rect2(3072, 0, 1024, 2560)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvo7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uc6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub7yk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ian0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yye4w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3uc6t"]
+radius = 83.0
+height = 1134.0
+
+[node name="Boss" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_3uc6t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rvo7g")
+frame = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="ShakeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 79)
+shape = SubResource("CapsuleShape2D_3uc6t")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]

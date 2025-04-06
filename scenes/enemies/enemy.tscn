@@ -41,7 +41,7 @@ frame_progress = 0.741292
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
-scale = Vector2(4.8, 2.6)
+scale = Vector2(4.84353, 2.71421)
 shape = SubResource("RectangleShape2D_8e3ao")
 
 [node name="RagdollTimer" type="Timer" parent="."]
