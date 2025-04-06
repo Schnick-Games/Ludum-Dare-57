@@ -142,6 +142,12 @@ func handle_move_and_slide_collisions():
 			if wall_jump_unlocked:
 				remaining_jumps = max(remaining_jumps, max_jumps_from_slide)
 			touching_wall = true
+		
+		# stop the jump from breaking when you touch a wall
+		if sprite.flip_h:
+			position.x += 5
+		else:
+			position.x -= 5
 	else:
 		touching_wall = false
 		max_down_velocity = max_fall_velocity
