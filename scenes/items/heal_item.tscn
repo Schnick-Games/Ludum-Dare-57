@@ -1,21 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://c11kto2ehl07o"]
 
-[ext_resource type="Script" uid="uid://c71pvl2x8n4yw" path="res://scenes/items/heal_item.gd" id="1_injit"]
+[ext_resource type="Script" uid="uid://c71pvl2x8n4yw" path="res://scripts/items/heal_item.gd" id="1_injit"]
 [ext_resource type="Texture2D" uid="uid://t6och5mcon7l" path="res://art/player/player_health.png" id="2_gxopa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_injit"]
-size = Vector2(87, 82)
+size = Vector2(43, 45)
 
 [node name="HealItem" type="Node2D"]
 script = ExtResource("1_injit")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_gxopa")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 1)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_injit")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

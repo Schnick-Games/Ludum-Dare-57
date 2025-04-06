@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 	for i in player.max_health:
 		if i >= player.health:
 			icons[i].texture = health_empty_ico
+		else:
+			icons[i].texture = health_ico
 			
 	
 func create_health_bar():

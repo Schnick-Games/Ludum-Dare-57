@@ -10,8 +10,9 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.health += 1
-		queue_free()
+		if body.health < body.max_health:
+			body.health += 1
+			queue_free()
 
 func _physics_process(delta: float) -> void:
 	time += delta * speed
