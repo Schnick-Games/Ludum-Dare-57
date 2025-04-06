@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxsxlhhwwdu7w"]
+[gd_scene load_steps=4 format=3 uid="uid://dxsxlhhwwdu7w"]
 
 [ext_resource type="Script" uid="uid://nwwuo3qyya4s" path="res://scripts/gameplay/skill_unlock.gd" id="1_y2h5k"]
+[ext_resource type="Texture2D" uid="uid://btp5fujjpxe0q" path="res://art/icons/DoubleJump.png" id="2_d3dy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to3sd"]
+size = Vector2(64, 64)
 
 [node name="SkillUnlock" type="Area2D"]
 script = ExtResource("1_y2h5k")
+texture = ExtResource("2_d3dy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6.45463)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_to3sd")

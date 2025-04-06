@@ -2553,9 +2553,20 @@ texture = ExtResource("4_xhitl")
 position = Vector2(192, -448)
 
 [node name="SkillUnlock" parent="." instance=ExtResource("4_0vfjw")]
-position = Vector2(8000, 448)
-scale = Vector2(6.38965, -6.30299)
+position = Vector2(7808, 1825)
 unlock_double_jump = true
+
+[node name="Label" type="Label" parent="SkillUnlock"]
+z_index = -1
+offset_left = -320.0
+offset_top = -196.0
+offset_right = -61.0
+offset_bottom = -61.0
+theme_override_font_sizes/font_size = 30
+text = "Press Space while
+in the air to
+double jump!"
+horizontal_alignment = 1
 
 [node name="Manhole" parent="." instance=ExtResource("5_liteb")]
 position = Vector2(192, 1865)
