@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcx6dh8mi7q8s" path="res://scripts/levels/game_over_screen.gd" id="1_4g8r6"]
 [ext_resource type="Shader" uid="uid://clnaviaa8s1fy" path="res://shaders/blur.gdshader" id="1_7lkwh"]
-[ext_resource type="Texture2D" uid="uid://d1i8mj400bleg" path="res://art/pause_screen/paused.png" id="2_4g8r6"]
+[ext_resource type="Texture2D" uid="uid://dx4r2mimuy2m6" path="res://art/game_over/game_over.png" id="3_4g8r6"]
 [ext_resource type="Theme" uid="uid://c07k3jva4brdo" path="res://themes/button_theme.tres" id="3_u6npy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xm1fb"]
@@ -39,10 +39,11 @@ theme_override_constants/separation = 50
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(512, 110)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_4g8r6")
+texture = ExtResource("3_4g8r6")
 
 [node name="Menu Options" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
