@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://eqxmmfvmk4eo"]
+[gd_scene load_steps=23 format=4 uid="uid://eqxmmfvmk4eo"]
 
 [ext_resource type="Script" uid="uid://c80tvjewymgt5" path="res://scripts/levels/main.gd" id="1_2vj2h"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="3_rssyh"]
@@ -7,11 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://8o13avdc125v" path="res://scenes/levels/floors/first_floor.tscn" id="4_j4d2a"]
 [ext_resource type="Texture2D" uid="uid://clab0uhx8ll54" path="res://art/floor/Sun.png" id="5_2xkjh"]
 [ext_resource type="PackedScene" uid="uid://drd0l5uopfegc" path="res://scenes/levels/floors/second_floor.tscn" id="5_u81e1"]
-[ext_resource type="PackedScene" uid="uid://cjsohkrukjpih" path="res://scenes/levels/floors/fourth_floor.tscn" id="6_b6bv0"]
+[ext_resource type="PackedScene" uid="uid://c0baq3p24x7sq" path="res://scenes/levels/floors/third_floor.tscn" id="6_b6bv0"]
 [ext_resource type="Texture2D" uid="uid://dxgqrv1274bve" path="res://art/floor/SkyTilePattern.png" id="6_dj21o"]
 [ext_resource type="Texture2D" uid="uid://bn62mw44q4xhe" path="res://art/floor/DirtTileBackground.png" id="7_2xkjh"]
 [ext_resource type="Texture2D" uid="uid://b00p6bpe58yqn" path="res://art/floor/TarmacTileBackground.png" id="8_dj21o"]
 [ext_resource type="Texture2D" uid="uid://c7dinvgb1moy4" path="res://art/floor/DirtTile.png" id="8_vkq25"]
+[ext_resource type="PackedScene" uid="uid://bio40gdilfb4r" path="res://scenes/levels/floors/fourth_floor.tscn" id="13_dj21o"]
+[ext_resource type="PackedScene" uid="uid://biskjhlwsmcph" path="res://scenes/levels/floors/boss_floor.tscn" id="14_6ui35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkq25"]
 texture = ExtResource("8_vkq25")
@@ -83,3 +85,9 @@ position = Vector2(64, 3329)
 
 [node name="ThirdFloor" parent="." instance=ExtResource("6_b6bv0")]
 position = Vector2(64, 5889)
+
+[node name="FourthFloor" parent="." instance=ExtResource("13_dj21o")]
+position = Vector2(64, 8384)
+
+[node name="BossFloor" parent="." instance=ExtResource("14_6ui35")]
+position = Vector2(64, 10945)

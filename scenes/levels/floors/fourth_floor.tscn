@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjsohkrukjpih"]
+[gd_scene load_steps=10 format=3 uid="uid://bio40gdilfb4r"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_jasnd"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="2_ksb1x"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_5vq56"]
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="7_187vu"]
 [ext_resource type="PackedScene" uid="uid://dxsxlhhwwdu7w" path="res://scenes/gameplay/skill_unlock.tscn" id="8_2e16i"]
-[ext_resource type="Texture2D" uid="uid://bw0edpc5n0d4c" path="res://art/icons/Dash.png" id="9_6fpvw"]
+[ext_resource type="Texture2D" uid="uid://cpo2ymems7rj0" path="res://art/icons/WallSlide.png" id="9_rb1np"]
 
-[node name="ThirdFloor" type="Node2D"]
+[node name="FourthFloor" type="Node2D"]
+position = Vector2(0, -2)
 script = ExtResource("1_jasnd")
 
 [node name="ObstacleContainer" type="Node2D" parent="."]
@@ -2495,6 +2496,6 @@ horizontal_alignment = 1
 
 [node name="SkillUnlock" parent="." instance=ExtResource("8_2e16i")]
 position = Vector2(7872, 1856)
-texture = ExtResource("9_6fpvw")
+texture = ExtResource("9_rb1np")
 unlock_wall_slide = true
 unlock_wall_jump = true

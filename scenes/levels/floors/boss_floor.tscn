@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cfv8y08vtqo8u" path="res://scenes/enemies/boss.tscn" id="5_a7512"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_thbdn"]
 [ext_resource type="PackedScene" uid="uid://7ep06dtxddcx" path="res://scenes/world_objects/one_way_platform.tscn" id="6_y8fb1"]
-[ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="8_fimj6"]
+[ext_resource type="PackedScene" uid="uid://bkjlmgwn4wnc3" path="res://scenes/gameplay/boss_entrance.tscn" id="8_c1npd"]
 
-[node name="ThirdFloor" type="Node2D"]
+[node name="BossFloor" type="Node2D"]
 script = ExtResource("1_wurc2")
 
 [node name="ObstacleContainer" type="Node2D" parent="."]
@@ -2931,10 +2931,12 @@ position = Vector2(6913, 645)
 position = Vector2(7169, 646)
 
 [node name="Manhole" parent="." instance=ExtResource("6_thbdn")]
-position = Vector2(4928, -576)
+position = Vector2(4928, -184)
 
 [node name="Floor921" parent="." instance=ExtResource("2_bog53")]
 position = Vector2(1088, 1600)
 
-[node name="Player" parent="." instance=ExtResource("8_fimj6")]
-position = Vector2(4672, -192)
+[node name="Area2D" parent="." node_paths=PackedStringArray("boss", "manhole") instance=ExtResource("8_c1npd")]
+position = Vector2(4925, 61)
+boss = NodePath("../Boss")
+manhole = NodePath("../Manhole")
