@@ -29,6 +29,7 @@ animations = [{
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_8e3ao")
+walk_speed = 200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

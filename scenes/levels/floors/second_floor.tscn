@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://drd0l5uopfegc"]
+[gd_scene load_steps=5 format=3 uid="uid://drd0l5uopfegc"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_4scyc"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_2h7tj"]
+[ext_resource type="PackedScene" uid="uid://dxsxlhhwwdu7w" path="res://scenes/gameplay/skill_unlock.tscn" id="4_0vfjw"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_xhitl"]
 
 [node name="Second Floor" type="Node2D"]
@@ -2548,3 +2549,8 @@ texture = ExtResource("4_xhitl")
 
 [node name="Floor684" parent="ObstacleContainer" instance=ExtResource("3_2h7tj")]
 position = Vector2(192, -448)
+
+[node name="SkillUnlock" parent="." instance=ExtResource("4_0vfjw")]
+position = Vector2(8000, 448)
+scale = Vector2(6.38965, -6.30299)
+unlock_double_jump = true

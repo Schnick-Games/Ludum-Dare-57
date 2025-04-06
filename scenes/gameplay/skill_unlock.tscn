@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxsxlhhwwdu7w"]
+
+[ext_resource type="Script" uid="uid://nwwuo3qyya4s" path="res://scripts/gameplay/skill_unlock.gd" id="1_y2h5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to3sd"]
+
+[node name="SkillUnlock" type="Area2D"]
+script = ExtResource("1_y2h5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_to3sd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
