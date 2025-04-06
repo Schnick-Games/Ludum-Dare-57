@@ -1,41 +1,29 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c07k3jva4brdo"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c07k3jva4brdo"]
 
 [ext_resource type="FontFile" uid="uid://d2d724igw8q65" path="res://fonts/comicbd.ttf" id="1_qnv5y"]
+[ext_resource type="Texture2D" uid="uid://dqhyrwdx1ahh6" path="res://art/ui/button.png" id="2_kwhvy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnv5y"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0.298039, 0.298039, 0.298039, 0.72549)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bpa63"]
+texture = ExtResource("2_kwhvy")
+texture_margin_bottom = 7.0
+modulate_color = Color(0.603922, 0.67451, 0.709804, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kwhvy"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6abfs"]
+texture = ExtResource("2_kwhvy")
+texture_margin_bottom = 7.0
+modulate_color = Color(0.411765, 0.415686, 0.415686, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpa63"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0.113725, 0.105882, 0.105882, 0.72549)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hguu3"]
+texture = ExtResource("2_kwhvy")
+texture_margin_bottom = 7.0
+modulate_color = Color(0.34902, 0.337255, 0.321569, 1)
 
 [resource]
 Button/colors/font_color = Color(0.831319, 0.817839, 0.838124, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 4
-Button/font_sizes/font_size = 30
+Button/font_sizes/font_size = 29
 Button/fonts/font = ExtResource("1_qnv5y")
-Button/styles/hover = SubResource("StyleBoxFlat_qnv5y")
-Button/styles/normal = SubResource("StyleBoxEmpty_kwhvy")
-Button/styles/pressed = SubResource("StyleBoxFlat_bpa63")
+Button/styles/hover = SubResource("StyleBoxTexture_bpa63")
+Button/styles/normal = SubResource("StyleBoxTexture_6abfs")
+Button/styles/pressed = SubResource("StyleBoxTexture_hguu3")

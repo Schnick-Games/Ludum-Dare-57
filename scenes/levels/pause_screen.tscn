@@ -46,6 +46,7 @@ size_flags_horizontal = 4
 texture = ExtResource("1_6hwjq")
 
 [node name="Menu Options" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
