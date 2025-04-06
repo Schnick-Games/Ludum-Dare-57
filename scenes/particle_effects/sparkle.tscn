@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu76y5gilhqw2"]
+
+[ext_resource type="Texture2D" uid="uid://bncgxjdsgyofd" path="res://art/particles/Sparkle.png" id="1_hjhri"]
+
+[sub_resource type="Curve" id="Curve_hjhri"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.482955, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_iqff2"]
+offsets = PackedFloat32Array(0, 0.513333, 1)
+colors = PackedColorArray(0.764944, 0.731276, 0.239516, 1, 0.515278, 0.447445, 0, 1, 0.855522, 0.846875, 0, 1)
+
+[node name="Sparkle" type="CPUParticles2D"]
+texture = ExtResource("1_hjhri")
+emission_shape = 3
+emission_rect_extents = Vector2(100, 100)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.3
+scale_amount_max = 0.8
+scale_amount_curve = SubResource("Curve_hjhri")
+color_ramp = SubResource("Gradient_iqff2")

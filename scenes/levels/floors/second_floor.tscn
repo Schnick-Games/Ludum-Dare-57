@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://drd0l5uopfegc"]
+[gd_scene load_steps=7 format=3 uid="uid://drd0l5uopfegc"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_4scyc"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_2h7tj"]
 [ext_resource type="PackedScene" uid="uid://dxsxlhhwwdu7w" path="res://scenes/gameplay/skill_unlock.tscn" id="4_0vfjw"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_xhitl"]
+[ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="5_liteb"]
+[ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="6_2h7tj"]
 
 [node name="Second Floor" type="Node2D"]
 script = ExtResource("1_4scyc")
@@ -2554,3 +2556,11 @@ position = Vector2(192, -448)
 position = Vector2(8000, 448)
 scale = Vector2(6.38965, -6.30299)
 unlock_double_jump = true
+
+[node name="Manhole" parent="." instance=ExtResource("5_liteb")]
+position = Vector2(192, 1865)
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("manhole") instance=ExtResource("6_2h7tj")]
+position = Vector2(1674, 554)
+manhole = NodePath("../Manhole")
+drops_key = true

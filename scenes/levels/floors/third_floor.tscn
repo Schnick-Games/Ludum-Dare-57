@@ -2292,7 +2292,7 @@ position = Vector2(5184, 1857)
 respawn_pos = NodePath("../SpikeRespawn2")
 
 [node name="SpikeRespawn2" type="Node2D" parent="Spikes"]
-position = Vector2(4672, 1729)
+position = Vector2(4672, 1701)
 
 [node name="Spikes12" parent="Spikes" node_paths=PackedStringArray("respawn_pos") instance=ExtResource("5_o6axi")]
 position = Vector2(6336, 1857)
@@ -2311,7 +2311,7 @@ position = Vector2(6720, 1857)
 respawn_pos = NodePath("../SpikeRespawn3")
 
 [node name="SpikeRespawn3" type="Node2D" parent="Spikes"]
-position = Vector2(6208, 1739)
+position = Vector2(6208, 1701)
 
 [node name="Decorations" type="Node2D" parent="."]
 
@@ -2400,8 +2400,10 @@ position = Vector2(576, 1852)
 [node name="Enemy3" parent="." instance=ExtResource("7_j2ajy")]
 position = Vector2(2486, 445)
 
-[node name="Enemy4" parent="." instance=ExtResource("7_j2ajy")]
+[node name="Enemy4" parent="." node_paths=PackedStringArray("manhole") instance=ExtResource("7_j2ajy")]
 position = Vector2(3008, 1345)
+manhole = NodePath("../Manhole")
+drops_key = true
 
 [node name="Enemy5" parent="." instance=ExtResource("7_j2ajy")]
 position = Vector2(4032, 1733)
