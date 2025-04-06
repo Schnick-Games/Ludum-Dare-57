@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://drd0l5uopfegc"]
+[gd_scene load_steps=9 format=3 uid="uid://drd0l5uopfegc"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_4scyc"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_2h7tj"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="5_liteb"]
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="6_2h7tj"]
 [ext_resource type="PackedScene" uid="uid://c11kto2ehl07o" path="res://scenes/items/heal_item.tscn" id="7_2h7tj"]
+[ext_resource type="PackedScene" uid="uid://cf5jerwacln2v" path="res://scenes/enemies/chungus.tscn" id="8_xhitl"]
 
 [node name="Second Floor" type="Node2D"]
 script = ExtResource("1_4scyc")
@@ -2588,3 +2589,18 @@ position = Vector2(187, 337)
 
 [node name="HealItem4" parent="." instance=ExtResource("7_2h7tj")]
 position = Vector2(823, 1747)
+
+[node name="Enemy2" parent="." instance=ExtResource("8_xhitl")]
+position = Vector2(6721, 288)
+
+[node name="Enemy3" parent="." instance=ExtResource("8_xhitl")]
+position = Vector2(6570, 1838)
+
+[node name="Enemy4" parent="." instance=ExtResource("8_xhitl")]
+position = Vector2(3901, 949)
+
+[node name="Enemy5" parent="." instance=ExtResource("8_xhitl")]
+position = Vector2(1259, 1855)
+
+[node name="Enemy6" parent="." instance=ExtResource("6_2h7tj")]
+position = Vector2(5181, 457)

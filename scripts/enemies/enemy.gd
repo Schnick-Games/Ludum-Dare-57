@@ -11,7 +11,7 @@ const KEY_RESOURCE: Resource = preload("res://scenes/items/key.tscn")
 @export var damage: int = 1
 
 @export var max_health: int = 2
-var health = max_health
+var health = 0
 
 var angular_velocity = 0
 var rag_dolling: bool = false
@@ -24,6 +24,8 @@ func _ready() -> void:
 	sprite.play("Walk")
 	if drops_key:
 		$Sparkle.emitting = true
+		
+	health = max_health
 
 func _physics_process(delta: float) -> void:
 	rotation_degrees += angular_velocity * delta
