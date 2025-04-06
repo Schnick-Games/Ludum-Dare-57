@@ -1,212 +1,279 @@
-[gd_scene load_steps=4 format=3 uid="uid://diaf7d8sfmw14"]
+[gd_scene load_steps=5 format=3 uid="uid://diaf7d8sfmw14"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_s0fox"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="2_sbsaq"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_li1pt"]
+[ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_hyxta"]
 
-[node name="FirstFloor" type="Node2D"]
+[node name="TopFloor" type="Node2D"]
 script = ExtResource("1_s0fox")
 
 [node name="Player" parent="." instance=ExtResource("2_sbsaq")]
 position = Vector2(1600, -192)
-horizontal_drag = 850.0
+max_health = 5
 double_jump_unlocked = false
 wall_jump_unlocked = false
 wall_slide_unlocked = false
+dash_unlocked = false
 
-[node name="ObstacleContainer" type="Node" parent="."]
+[node name="ObstacleContainer" type="Node2D" parent="."]
 
 [node name="Floor792" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(64, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor793" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(8128, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor794" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(320, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor795" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(3264, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor796" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(1728, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor797" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(1856, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor798" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(1984, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor799" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(2112, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor800" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(1472, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor801" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(1600, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor802" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(1216, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor803" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(1344, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor804" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(960, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor805" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(1088, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor806" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(704, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor807" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(832, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor808" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(448, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor809" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(576, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor810" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(3392, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor811" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(3520, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor812" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(2752, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor813" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(2880, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor814" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(3008, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor815" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(3136, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor816" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(2496, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor817" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(2624, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor818" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(2240, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor819" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(2368, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor820" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(3648, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor821" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(6592, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor822" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(5056, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor823" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(5184, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor824" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(5312, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor825" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(5440, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor826" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(4800, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor827" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(4928, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor828" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(4544, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor829" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(4672, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor830" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(4288, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor831" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(4416, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor832" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(4032, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor833" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(4160, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor834" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(3776, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor835" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(3904, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor836" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(6720, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor837" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(6848, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor838" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(6080, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor839" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(6208, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor840" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(6336, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor841" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(6464, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor842" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(5824, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor843" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(5952, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor844" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(5568, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor845" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(5696, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor846" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(7744, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor847" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(7872, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor848" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(8000, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor849" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(7232, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor850" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(7360, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor851" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(7488, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor852" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(7616, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor853" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(6976, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor854" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(7104, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor855" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(-64, -64)
+texture = ExtResource("4_hyxta")
 
 [node name="Floor856" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(8256, -64)
+texture = ExtResource("4_hyxta")

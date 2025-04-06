@@ -27,7 +27,7 @@ var attacking: bool = false
 var jumping: bool = false
 
 @export var max_health: int = 3
-var health = max_health
+var health
 
 var invincible: bool = false
 
@@ -49,6 +49,8 @@ var sprite: AnimatedSprite2D
 var ray_cast: RayCast2D 
 
 func _ready() -> void:
+	health = max_health
+	
 	sprite = $AnimatedSprite2D
 	ray_cast = $RayCast2D
 	
