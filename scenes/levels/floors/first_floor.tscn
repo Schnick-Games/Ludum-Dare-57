@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://8o13avdc125v"]
+[gd_scene load_steps=8 format=3 uid="uid://8o13avdc125v"]
 
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="1_20x7r"]
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_638su"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="5_bkni2"]
 [ext_resource type="PackedScene" uid="uid://ciewj4sn7i43u" path="res://scenes/world_objects/spikes.tscn" id="6_3gblh"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_8ls8h"]
+[ext_resource type="PackedScene" uid="uid://c11kto2ehl07o" path="res://scenes/items/heal_item.tscn" id="7_3gblh"]
 
 [node name="FirstFloor" type="Node2D"]
 script = ExtResource("1_638su")
@@ -2775,3 +2776,12 @@ respawn_pos = NodePath("../SpikeRespawn")
 
 [node name="SpikeRespawn" type="Node2D" parent="SpikeContainer"]
 position = Vector2(1600, 1313)
+
+[node name="HealItem" parent="." instance=ExtResource("7_3gblh")]
+position = Vector2(5049, 1871)
+
+[node name="HealItem2" parent="." instance=ExtResource("7_3gblh")]
+position = Vector2(8015, 466)
+
+[node name="HealItem3" parent="." instance=ExtResource("7_3gblh")]
+position = Vector2(6199, 1495)
