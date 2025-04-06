@@ -11,4 +11,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Enemy:
 		var enemy: Enemy = body
 		enemy.global_position = respawn_pos.global_position
-		enemy.damage_enemy(1)
+		enemy.call_deferred("damage_enemy",1)

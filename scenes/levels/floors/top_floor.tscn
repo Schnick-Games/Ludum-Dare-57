@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="2_sbsaq"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_li1pt"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_hyxta"]
-[ext_resource type="PackedScene" path="res://scenes/enemies/dummy.tscn" id="5_3xnqy"]
+[ext_resource type="PackedScene" uid="uid://chvmoijr3oxsi" path="res://scenes/enemies/dummy.tscn" id="5_3xnqy"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_s0fox"]
 [ext_resource type="PackedScene" uid="uid://d3ah52l2mwlyb" path="res://scenes/items/key.tscn" id="7_sbsaq"]
 [ext_resource type="PackedScene" uid="uid://7ep06dtxddcx" path="res://scenes/world_objects/one_way_platform.tscn" id="8_li1pt"]
