@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://8o13avdc125v"]
+[gd_scene load_steps=7 format=3 uid="uid://8o13avdc125v"]
 
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="1_20x7r"]
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_638su"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_a8j2g"]
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="5_bkni2"]
+[ext_resource type="PackedScene" uid="uid://ciewj4sn7i43u" path="res://scenes/world_objects/spikes.tscn" id="6_3gblh"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_8ls8h"]
 
 [node name="FirstFloor" type="Node2D"]
@@ -209,10 +210,6 @@ texture = ExtResource("4_a8j2g")
 
 [node name="Floor58" parent="ObstacleContainer" instance=ExtResource("1_20x7r")]
 position = Vector2(1216, 704)
-texture = ExtResource("4_a8j2g")
-
-[node name="Floor59" parent="ObstacleContainer" instance=ExtResource("1_20x7r")]
-position = Vector2(2112, 1344)
 texture = ExtResource("4_a8j2g")
 
 [node name="Floor60" parent="ObstacleContainer" instance=ExtResource("1_20x7r")]
@@ -2745,3 +2742,36 @@ drops_key = true
 
 [node name="Manhole" parent="." instance=ExtResource("6_8ls8h")]
 position = Vector2(8000, 1864)
+
+[node name="SpikeContainer" type="Node2D" parent="."]
+
+[node name="Spikes" parent="SpikeContainer" node_paths=PackedStringArray("respawn_pos") instance=ExtResource("6_3gblh")]
+position = Vector2(1728, 1600)
+respawn_pos = NodePath("../SpikeRespawn")
+
+[node name="Spikes2" parent="SpikeContainer" node_paths=PackedStringArray("respawn_pos") instance=ExtResource("6_3gblh")]
+position = Vector2(1856, 1600)
+respawn_pos = NodePath("../SpikeRespawn")
+
+[node name="Spikes3" parent="SpikeContainer" node_paths=PackedStringArray("respawn_pos") instance=ExtResource("6_3gblh")]
+position = Vector2(1984, 1600)
+respawn_pos = NodePath("../SpikeRespawn")
+
+[node name="Spikes4" parent="SpikeContainer" node_paths=PackedStringArray("respawn_pos") instance=ExtResource("6_3gblh")]
+position = Vector2(2112, 1600)
+respawn_pos = NodePath("../SpikeRespawn")
+
+[node name="Spikes5" parent="SpikeContainer" node_paths=PackedStringArray("respawn_pos") instance=ExtResource("6_3gblh")]
+position = Vector2(2240, 1600)
+respawn_pos = NodePath("../SpikeRespawn")
+
+[node name="Spikes6" parent="SpikeContainer" node_paths=PackedStringArray("respawn_pos") instance=ExtResource("6_3gblh")]
+position = Vector2(2368, 1600)
+respawn_pos = NodePath("../SpikeRespawn")
+
+[node name="Spikes7" parent="SpikeContainer" node_paths=PackedStringArray("respawn_pos") instance=ExtResource("6_3gblh")]
+position = Vector2(2496, 1600)
+respawn_pos = NodePath("../SpikeRespawn")
+
+[node name="SpikeRespawn" type="Node2D" parent="SpikeContainer"]
+position = Vector2(1600, 1313)

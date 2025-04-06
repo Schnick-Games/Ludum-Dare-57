@@ -2273,7 +2273,7 @@ position = Vector2(7616, 1856)
 respawn_pos = NodePath("../SpikeRespawn")
 
 [node name="SpikeRespawn" type="Node2D" parent="Spikes"]
-position = Vector2(6848, 961)
+position = Vector2(6848, 960)
 
 [node name="Spikes8" parent="Spikes" node_paths=PackedStringArray("respawn_pos") instance=ExtResource("5_o6axi")]
 position = Vector2(4800, 1856)
@@ -2311,7 +2311,7 @@ position = Vector2(6720, 1857)
 respawn_pos = NodePath("../SpikeRespawn3")
 
 [node name="SpikeRespawn3" type="Node2D" parent="Spikes"]
-position = Vector2(6208, 1701)
+position = Vector2(6208, 1728)
 
 [node name="Decorations" type="Node2D" parent="."]
 
