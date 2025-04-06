@@ -50,10 +50,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="RetryLevel" type="Button" parent="MarginContainer/VBoxContainer/Menu Options"]
+[node name="Replay" type="Button" parent="MarginContainer/VBoxContainer/Menu Options"]
 layout_mode = 2
 theme = ExtResource("3_u6npy")
-text = "Retry Level
+text = "Replay
 "
 
 [node name="QuitToMenu" type="Button" parent="MarginContainer/VBoxContainer/Menu Options"]
@@ -62,5 +62,5 @@ theme = ExtResource("3_u6npy")
 text = "Quit To Menu
 "
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu Options/RetryLevel" to="." method="_on_retry_level_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu Options/Replay" to="." method="_on_replay_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Menu Options/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]
