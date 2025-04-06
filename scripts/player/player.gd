@@ -28,7 +28,7 @@ var attacking: bool = false
 var jumping: bool = false
 
 @export var max_health: int = 3
-var health = max_health
+var health
 
 var invincible: bool = false
 
@@ -50,6 +50,8 @@ var sprite: AnimatedSprite2D
 var ray_cast: RayCast2D 
 
 func _ready() -> void:
+	health = max_health
+	
 	sprite = $AnimatedSprite2D
 	ray_cast = $RayCast2D
 	
@@ -110,12 +112,15 @@ func _physics_process(delta: float) -> void:
 func handle_move_and_slide_collisions():
 	var floor_collision: bool = false
 	var wall_collision: bool = false
+	var ceiling_collision:bool = false
 	for i in get_slide_collision_count():
 		var angle: float = get_slide_collision(i).get_angle()
 		if angle == 0.0:
 			floor_collision = true
 		elif is_equal_approx(angle, PI/2):
 			wall_collision = true
+		elif is_equal_approx(angle, PI):
+			ceiling_collision = true
 	
 	if floor_collision:
 		remaining_jumps = max_jumps
@@ -129,6 +134,7 @@ func handle_move_and_slide_collisions():
 			jumping = true
 			remaining_jumps -= 1
 		touching_floor = false
+	
 	if wall_collision:
 		if wall_slide_unlocked:
 			max_down_velocity = slide_velocity
@@ -139,6 +145,9 @@ func handle_move_and_slide_collisions():
 	else:
 		touching_wall = false
 		max_down_velocity = max_fall_velocity
+	
+	if ceiling_collision:
+		$HeadBumpSounds.play()
 
 func attack():
 	sprite.play("attack forward")

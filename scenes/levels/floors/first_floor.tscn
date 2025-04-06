@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://8o13avdc125v"]
+[gd_scene load_steps=6 format=3 uid="uid://8o13avdc125v"]
 
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="1_20x7r"]
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_638su"]
-[ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="3_638su"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_a8j2g"]
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="5_bkni2"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_8ls8h"]
@@ -10,14 +9,7 @@
 [node name="FirstFloor" type="Node2D"]
 script = ExtResource("1_638su")
 
-[node name="Player" parent="." instance=ExtResource("3_638su")]
-position = Vector2(192, 192)
-horizontal_drag = 850.0
-double_jump_unlocked = false
-wall_jump_unlocked = false
-wall_slide_unlocked = false
-
-[node name="ObstacleContainer" type="Node" parent="."]
+[node name="ObstacleContainer" type="Node2D" parent="."]
 
 [node name="Floor6" parent="ObstacleContainer" instance=ExtResource("1_20x7r")]
 position = Vector2(320, 576)
