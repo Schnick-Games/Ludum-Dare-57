@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjsohkrukjpih"]
+[gd_scene load_steps=10 format=3 uid="uid://cjsohkrukjpih"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_o6axi"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_408f1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c8dowiernnwd3" path="res://art/world_objects/Stalagtite.png" id="6_as2h6"]
 [ext_resource type="PackedScene" uid="uid://claj6wcferre1" path="res://scenes/enemies/enemy.tscn" id="7_j2ajy"]
 [ext_resource type="PackedScene" uid="uid://dxsxlhhwwdu7w" path="res://scenes/gameplay/skill_unlock.tscn" id="8_408f1"]
+[ext_resource type="Texture2D" uid="uid://bw0edpc5n0d4c" path="res://art/icons/Dash.png" id="9_as2h6"]
 
 [node name="ThirdFloor" type="Node2D"]
 script = ExtResource("1_o6axi")
@@ -2414,7 +2415,17 @@ position = Vector2(4149, 705)
 [node name="Enemy8" parent="." instance=ExtResource("7_j2ajy")]
 position = Vector2(5952, 1868)
 
+[node name="Label" type="Label" parent="."]
+z_index = -1
+offset_left = 448.0
+offset_top = 1600.0
+offset_right = 735.0
+offset_bottom = 1735.0
+theme_override_font_sizes/font_size = 30
+text = "Press Shift to dash"
+horizontal_alignment = 1
+
 [node name="SkillUnlock" parent="." instance=ExtResource("8_408f1")]
-position = Vector2(192, 320)
-scale = Vector2(6.52, 7)
+position = Vector2(352, 1728)
+texture = ExtResource("9_as2h6")
 unlock_dash = true
