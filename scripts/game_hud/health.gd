@@ -22,6 +22,9 @@ func create_health_bar():
 	var icon: TextureRect = TextureRect.new()
 	$HBoxContainer.add_child(icon)
 	icon.texture = health_ico
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon.custom_minimum_size = Vector2(55, 55)
 	icons.push_back(icon)
 	pass
 	
