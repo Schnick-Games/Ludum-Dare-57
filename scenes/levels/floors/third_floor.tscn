@@ -2415,17 +2415,17 @@ position = Vector2(4149, 705)
 [node name="Enemy8" parent="." instance=ExtResource("7_j2ajy")]
 position = Vector2(5952, 1868)
 
+[node name="Label" type="Label" parent="."]
+z_index = -1
+offset_left = 448.0
+offset_top = 1600.0
+offset_right = 735.0
+offset_bottom = 1735.0
+theme_override_font_sizes/font_size = 30
+text = "Press Shift to dash"
+horizontal_alignment = 1
+
 [node name="SkillUnlock" parent="." instance=ExtResource("8_408f1")]
 position = Vector2(352, 1728)
 texture = ExtResource("9_as2h6")
 unlock_dash = true
-
-[node name="Label" type="Label" parent="SkillUnlock"]
-z_index = -1
-offset_left = 96.0
-offset_top = -128.0
-offset_right = 383.0
-offset_bottom = 7.0
-theme_override_font_sizes/font_size = 30
-text = "Press Shift to dash"
-horizontal_alignment = 1
