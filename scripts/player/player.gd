@@ -105,6 +105,13 @@ func _physics_process(delta: float) -> void:
 		
 		if Input.is_action_just_pressed("Attack") && !dashing:
 			attack()
+		# collision layer for platforms
+		if Input.is_action_just_pressed("ui_down"):
+			set_collision_layer_value(2, false)
+			set_collision_mask_value(2, false)
+		if Input.is_action_just_released("ui_down"):
+			set_collision_layer_value(2, true)
+			set_collision_mask_value(2, true)
 		
 	move_and_slide()
 	handle_move_and_slide_collisions()

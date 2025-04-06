@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://diaf7d8sfmw14"]
+[gd_scene load_steps=9 format=3 uid="uid://diaf7d8sfmw14"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_s0fox"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="2_sbsaq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chvmoijr3oxsi" path="res://scenes/enemies/dummy.tscn" id="5_3xnqy"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_s0fox"]
 [ext_resource type="PackedScene" uid="uid://d3ah52l2mwlyb" path="res://scenes/items/key.tscn" id="7_sbsaq"]
+[ext_resource type="PackedScene" uid="uid://7ep06dtxddcx" path="res://scenes/world_objects/one_way_platform.tscn" id="8_li1pt"]
 
 [node name="TopFloor" type="Node2D"]
 script = ExtResource("1_s0fox")
@@ -961,6 +962,7 @@ horizontal_alignment = 1
 
 [node name="Dummy" parent="." instance=ExtResource("5_3xnqy")]
 position = Vector2(1728, -597)
+collision_layer = 1
 
 [node name="Manhole" parent="." instance=ExtResource("6_s0fox")]
 position = Vector2(192, -567)
@@ -968,3 +970,6 @@ position = Vector2(192, -567)
 [node name="Key" parent="." node_paths=PackedStringArray("manhole") instance=ExtResource("7_sbsaq")]
 position = Vector2(794, -584)
 manhole = NodePath("../Manhole")
+
+[node name="OneWayPlatform" parent="." instance=ExtResource("8_li1pt")]
+position = Vector2(3012, -763)
