@@ -173,8 +173,10 @@ func attack():
 	
 	var hit_object = ray_cast.get_collider()
 	if hit_object is Enemy:
-		var enemy: Enemy = hit_object
-		enemy.hit_enemy(ray_cast.target_position.normalized() * 300, 1)
+		(hit_object as Enemy).hit_enemy(ray_cast.target_position.normalized() * 300, 1)
+	
+	if hit_object is Boss:
+		(hit_object as Boss).damage_boss()
 
 func _on_attack_timer_timeout() -> void:
 	sprite.play("idle")

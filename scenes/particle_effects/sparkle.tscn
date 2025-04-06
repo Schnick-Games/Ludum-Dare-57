@@ -8,7 +8,7 @@ point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_iqff2"]
 offsets = PackedFloat32Array(0, 0.513333, 1)
-colors = PackedColorArray(0.764944, 0.731276, 0.239516, 1, 0.515278, 0.447445, 0, 1, 0.855522, 0.846875, 0, 1)
+colors = PackedColorArray(0.764706, 0.729412, 0.92549, 1, 0.917647, 0.847059, 0.372549, 1, 0.854902, 0.847059, 0.921569, 1)
 
 [node name="Sparkle" type="CPUParticles2D"]
 texture = ExtResource("1_hjhri")

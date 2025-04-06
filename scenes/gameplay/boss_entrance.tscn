@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkjlmgwn4wnc3"]
+
+[ext_resource type="Script" uid="uid://bravp725itmhw" path="res://scripts/gameplay/boss_entrance.gd" id="1_p5f0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fimj6"]
+size = Vector2(132, 54)
+
+[node name="BossEntrance" type="Area2D"]
+script = ExtResource("1_p5f0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -17)
+shape = SubResource("RectangleShape2D_fimj6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

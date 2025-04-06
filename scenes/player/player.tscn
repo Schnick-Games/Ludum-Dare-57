@@ -94,7 +94,9 @@ volume_db = -5.0
 position = Vector2(28, 42)
 enabled = false
 target_position = Vector2(64, -33)
+collision_mask = 5
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
