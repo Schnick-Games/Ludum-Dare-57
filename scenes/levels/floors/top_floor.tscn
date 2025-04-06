@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://diaf7d8sfmw14"]
+[gd_scene load_steps=11 format=3 uid="uid://diaf7d8sfmw14"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_s0fox"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="2_sbsaq"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_li1pt"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_hyxta"]
+[ext_resource type="PackedScene" uid="uid://chvmoijr3oxsi" path="res://scenes/enemies/dummy.tscn" id="5_3xnqy"]
+[ext_resource type="PackedScene" uid="uid://cf5jerwacln2v" path="res://scenes/enemies/chungus.tscn" id="5_1b2jn"]
 [ext_resource type="PackedScene" uid="uid://chvmoijr3oxsi" path="res://scenes/enemies/dummy.tscn" id="5_3xnqy"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_s0fox"]
 [ext_resource type="PackedScene" uid="uid://d3ah52l2mwlyb" path="res://scenes/items/key.tscn" id="7_sbsaq"]
@@ -891,6 +893,9 @@ position = Vector2(4032, -576)
 
 [node name="Floor1059" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
 position = Vector2(4032, -704)
+
+[node name="Enemy" parent="ObstacleContainer" instance=ExtResource("5_1b2jn")]
+position = Vector2(3004, -901)
 
 [node name="Tutorial Text" type="Node2D" parent="."]
 
