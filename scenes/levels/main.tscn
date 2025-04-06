@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://8o13avdc125v" path="res://scenes/levels/floors/first_floor.tscn" id="4_j4d2a"]
 [ext_resource type="Texture2D" uid="uid://clab0uhx8ll54" path="res://art/floor/Sun.png" id="5_2xkjh"]
 [ext_resource type="PackedScene" uid="uid://drd0l5uopfegc" path="res://scenes/levels/floors/second_floor.tscn" id="5_u81e1"]
-[ext_resource type="PackedScene" uid="uid://cjsohkrukjpih" path="res://scenes/levels/floors/third_floor.tscn" id="6_b6bv0"]
+[ext_resource type="PackedScene" uid="uid://cjsohkrukjpih" path="res://scenes/levels/floors/fourth_floor.tscn" id="6_b6bv0"]
 [ext_resource type="Texture2D" uid="uid://dxgqrv1274bve" path="res://art/floor/SkyTilePattern.png" id="6_dj21o"]
 [ext_resource type="Texture2D" uid="uid://bn62mw44q4xhe" path="res://art/floor/DirtTileBackground.png" id="7_2xkjh"]
 [ext_resource type="Texture2D" uid="uid://b00p6bpe58yqn" path="res://art/floor/TarmacTileBackground.png" id="8_dj21o"]
