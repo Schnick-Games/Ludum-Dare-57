@@ -138,8 +138,7 @@ func handle_move_and_slide_collisions():
 		jumping = false
 	else:
 		if touching_floor == true && jumping == false:
-			jumping = true
-			remaining_jumps -= 1
+			$CoyoteTimer.start()
 		touching_floor = false
 	
 	if wall_collision:
@@ -208,3 +207,9 @@ func die():
 
 func _on_invincibility_timer_timeout() -> void:
 	invincible = false
+
+
+func _on_coyote_timer_timeout() -> void:
+	if touching_floor == false && jumping == false:
+		jumping = true
+		remaining_jumps -= 1
