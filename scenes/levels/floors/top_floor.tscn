@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://diaf7d8sfmw14"]
+[gd_scene load_steps=10 format=3 uid="uid://diaf7d8sfmw14"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_s0fox"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="2_sbsaq"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="3_li1pt"]
 [ext_resource type="Texture2D" uid="uid://cpev4ml0c2dh3" path="res://art/floor/TarmacTile.png" id="4_hyxta"]
-[ext_resource type="PackedScene" uid="uid://chvmoijr3oxsi" path="res://scenes/enemies/dummy.tscn" id="5_3xnqy"]
-[ext_resource type="PackedScene" uid="uid://cf5jerwacln2v" path="res://scenes/enemies/chungus.tscn" id="5_1b2jn"]
 [ext_resource type="PackedScene" uid="uid://chvmoijr3oxsi" path="res://scenes/enemies/dummy.tscn" id="5_3xnqy"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_s0fox"]
 [ext_resource type="PackedScene" uid="uid://d3ah52l2mwlyb" path="res://scenes/items/key.tscn" id="7_sbsaq"]
@@ -16,7 +14,7 @@
 script = ExtResource("1_s0fox")
 
 [node name="Player" parent="." instance=ExtResource("2_sbsaq")]
-position = Vector2(3456, -576)
+position = Vector2(3776, -576)
 max_health = 5
 double_jump_unlocked = false
 wall_jump_unlocked = false
@@ -707,7 +705,7 @@ position = Vector2(3136, -448)
 texture = ExtResource("4_hyxta")
 
 [node name="Floor1011" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
-position = Vector2(4032, -831)
+position = Vector2(4032, -832)
 texture = ExtResource("4_hyxta")
 
 [node name="Floor1012" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
@@ -889,22 +887,19 @@ position = Vector2(-64, -704)
 position = Vector2(4032, -448)
 
 [node name="Floor1058" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
-position = Vector2(4032, -576)
+position = Vector2(4032, -577)
 
 [node name="Floor1059" parent="ObstacleContainer" instance=ExtResource("3_li1pt")]
-position = Vector2(4032, -704)
-
-[node name="Enemy" parent="ObstacleContainer" instance=ExtResource("5_1b2jn")]
-position = Vector2(3004, -901)
+position = Vector2(4032, -705)
 
 [node name="Tutorial Text" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="Tutorial Text"]
 z_index = -1
-offset_left = 3264.0
-offset_top = -768.0
-offset_right = 3605.0
-offset_bottom = -651.0
+offset_left = 3648.0
+offset_top = -832.0
+offset_right = 3989.0
+offset_bottom = -715.0
 theme_override_font_sizes/font_size = 40
 text = "Move with
 WASD"
@@ -919,6 +914,17 @@ offset_bottom = -651.0
 theme_override_font_sizes/font_size = 40
 text = "Press Space
 to jump"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="Tutorial Text"]
+z_index = -1
+offset_left = 2858.0
+offset_top = -909.0
+offset_right = 3256.0
+offset_bottom = -792.0
+theme_override_font_sizes/font_size = 40
+text = "press S to fall
+through a platform"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Tutorial Text"]
@@ -988,7 +994,7 @@ position = Vector2(794, -584)
 manhole = NodePath("../Manhole")
 
 [node name="OneWayPlatform" parent="." instance=ExtResource("8_li1pt")]
-position = Vector2(3012, -763)
+position = Vector2(3067, -744)
 
 [node name="HealItem" parent="." instance=ExtResource("9_b7yy4")]
 position = Vector2(1292, -582)

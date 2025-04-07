@@ -928,6 +928,7 @@ texture = ExtResource("3_27s7v")
 
 [node name="Floor601" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, -64)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor602" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4672, -64)
@@ -944,9 +945,11 @@ position = Vector2(4673, 192)
 
 [node name="Floor603" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4288, -64)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor604" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4416, -64)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor605" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4032, -64)
@@ -954,6 +957,7 @@ texture = ExtResource("3_27s7v")
 
 [node name="Floor606" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4160, -64)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor607" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3776, -64)
