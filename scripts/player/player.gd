@@ -175,7 +175,8 @@ func attack():
 	if hit_object is Enemy:
 		(hit_object as Enemy).hit_enemy(ray_cast.target_position.normalized() * 300, 1)
 		$AttackHitSound.play()
-	
+		$BloodExplosion.global_position = ray_cast.get_collision_point()
+		$BloodExplosion.emitting = true
 	if hit_object is Boss:
 		if (hit_object as Boss).damage_boss():
 			$AttackHitSound.play()

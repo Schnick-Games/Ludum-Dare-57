@@ -67,10 +67,13 @@ func _on_timer_timeout() -> void:
 		$Timer.start(5)
 		sprite.frame = 3
 		set_spikes_enabled(false)
+		$CPUParticles2D.emitting = true
+		sprite.flip_h = false
 	else:
 		$Timer.start(3)
 		is_weak = false
 		set_spikes_enabled(true)
+		$CPUParticles2D.emitting = false
 		if !boss_platforms.is_empty():
 			var platform: BossPlatform = boss_platforms.pick_random()
 			boss_platforms.remove_at(boss_platforms.find(platform))

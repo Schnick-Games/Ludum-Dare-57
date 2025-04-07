@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://esrlrw66x4vm"]
+[gd_scene load_steps=24 format=3 uid="uid://esrlrw66x4vm"]
 
 [ext_resource type="Texture2D" uid="uid://dcos8tebajo6g" path="res://art/player/PlayerIdle-Sheet.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://cpqf35o3atire" path="res://scripts/player/player.gd" id="1_dovo2"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ch3rb3aerhsq7" path="res://audio/player/attack/attack_hit/AttackHit2.wav" id="8_qek5x"]
 [ext_resource type="PackedScene" uid="uid://dp68grnhlgk6k" path="res://scenes/gameplay/damage_effect.tscn" id="9_5gtgg"]
 [ext_resource type="AudioStream" uid="uid://c8dhm2kkdloyr" path="res://audio/player/MolemanDamage.wav" id="10_h17s1"]
+[ext_resource type="Texture2D" uid="uid://c0bybcolcfrk7" path="res://art/particles/Drop.png" id="11_je7p5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("1_8afob")
@@ -73,6 +74,13 @@ stream_0/stream = ExtResource("8_qek5x")
 random_pitch = 1.05
 streams_count = 1
 stream_0/stream = ExtResource("10_h17s1")
+
+[sub_resource type="Curve" id="Curve_fm80t"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.143631, 1), 0.0, 0.0, 0, 0, Vector2(0.639566, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_gx1jg"]
+colors = PackedColorArray(0.807424, 0.121396, 0, 1, 0.366868, 0, 0.0861522, 1)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -144,6 +152,25 @@ sprite = NodePath("../AnimatedSprite2D")
 
 [node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_h17s1")
+
+[node name="BloodExplosion" type="CPUParticles2D" parent="."]
+z_index = 20
+emitting = false
+amount = 20
+texture = ExtResource("11_je7p5")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.8
+particle_flag_align_y = true
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_fm80t")
+color_initial_ramp = SubResource("Gradient_gx1jg")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
