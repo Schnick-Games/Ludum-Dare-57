@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfv8y08vtqo8u"]
+[gd_scene load_steps=12 format=3 uid="uid://cfv8y08vtqo8u"]
 
 [ext_resource type="Texture2D" uid="uid://c6ltqs8ecbkdd" path="res://art/enemies/boss/Boss-Sheet.png" id="1_1ex25"]
 [ext_resource type="Script" uid="uid://c3sq76nqneyvo" path="res://scripts/enemies/boss/boss.gd" id="1_3uc6t"]
 [ext_resource type="PackedScene" uid="uid://dp68grnhlgk6k" path="res://scenes/gameplay/damage_effect.tscn" id="3_ub7yk"]
+[ext_resource type="AudioStream" uid="uid://dyrqt37rj5c32" path="res://audio/enemies/DeepExhale.wav" id="4_ian0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3uc6t"]
 atlas = ExtResource("1_1ex25")
@@ -44,6 +45,11 @@ animations = [{
 radius = 83.0
 height = 1134.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yye4w"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("4_ian0n")
+
 [node name="Boss" type="Area2D"]
 collision_layer = 4
 collision_mask = 4
@@ -66,6 +72,9 @@ shape = SubResource("CapsuleShape2D_3uc6t")
 
 [node name="DamageEffect" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_ub7yk")]
 sprite = NodePath("../AnimatedSprite2D")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_yye4w")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]

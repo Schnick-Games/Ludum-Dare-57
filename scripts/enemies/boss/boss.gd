@@ -58,6 +58,7 @@ func damage_boss() -> bool:
 	if is_weak:
 		health -= 1
 		$DamageEffect.damage_effect()
+		$DamageSound.play()
 		if health <= 0:
 			die()
 			return true

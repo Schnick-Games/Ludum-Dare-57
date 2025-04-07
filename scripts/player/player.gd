@@ -190,6 +190,7 @@ func _on_attack_timer_timeout() -> void:
 func damage_player(damage: int) -> bool:
 	if !invincible:
 		$DamageEffect.damage_effect()
+		$DamageSound.play()
 		health -= damage
 		if health <= 0:
 			die()

@@ -69,6 +69,7 @@ func hit_enemy(velocity_change: Vector2, damage: int):
 func damage_enemy(damage: int):
 	health -= damage
 	$DamageEffect.damage_effect()
+	$DamageSound.play()
 	if health <= 0:
 		die()
 

@@ -2945,6 +2945,13 @@ manhole = NodePath("../Manhole")
 
 [node name="Player" parent="." instance=ExtResource("9_c1npd")]
 position = Vector2(4681, -231)
+walk_speed = 500.0
+max_fall_velocity = 2000.0
+slide_velocity = 150.0
+max_jumps = 1
+max_dash = 1
+max_jumps_from_slide = 1
+max_health = 3
 
 [node name="Enemy" parent="." instance=ExtResource("10_wurc2")]
 position = Vector2(3998, -234)

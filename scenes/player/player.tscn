@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://esrlrw66x4vm"]
+[gd_scene load_steps=21 format=3 uid="uid://esrlrw66x4vm"]
 
 [ext_resource type="Texture2D" uid="uid://dcos8tebajo6g" path="res://art/player/PlayerIdle-Sheet.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://cpqf35o3atire" path="res://scripts/player/player.gd" id="1_dovo2"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b4fl2yldgh7tu" path="res://audio/player/attack/attack_deflected/Deflected.wav" id="7_0owmy"]
 [ext_resource type="AudioStream" uid="uid://ch3rb3aerhsq7" path="res://audio/player/attack/attack_hit/AttackHit2.wav" id="8_qek5x"]
 [ext_resource type="PackedScene" uid="uid://dp68grnhlgk6k" path="res://scenes/gameplay/damage_effect.tscn" id="9_5gtgg"]
+[ext_resource type="AudioStream" uid="uid://c8dhm2kkdloyr" path="res://audio/player/MolemanDamage.wav" id="10_h17s1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("1_8afob")
@@ -68,21 +69,19 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("8_qek5x")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h17s1"]
+random_pitch = 1.05
+streams_count = 1
+stream_0/stream = ExtResource("10_h17s1")
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_dovo2")
 gravity = 3000.0
-walk_speed = null
 jump_velocity = 1300.0
-max_fall_velocity = null
-slide_velocity = null
 dash_velocity = 2000.0
 horizontal_drag = 6500.0
-max_jumps = null
-max_dash = null
-max_jumps_from_slide = null
-max_health = null
 double_jump_unlocked = true
 wall_jump_unlocked = true
 wall_slide_unlocked = true
@@ -142,6 +141,9 @@ pitch_scale = 0.85
 
 [node name="DamageEffect" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("9_5gtgg")]
 sprite = NodePath("../AnimatedSprite2D")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_h17s1")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
