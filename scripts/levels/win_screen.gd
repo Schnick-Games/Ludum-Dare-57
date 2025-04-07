@@ -2,6 +2,15 @@ extends CanvasLayer
 
 signal quit_to_main
 
+func _ready() -> void:
+	var time_string: String = str(int(floor(GlobalVariables.time /60.0)))
+	time_string += ":"
+	var seconds: float = snapped(fmod(GlobalVariables.time, 60), 0.01)
+	if seconds < 10.0:
+		time_string += "0"
+	time_string += str(seconds)
+	$MarginContainer/VBoxContainer/Time.text = "Time: " + time_string
+
 func _on_replay_pressed() -> void:
 	var main = get_tree().root.get_node("Main")
 	get_tree().root.remove_child(main)
