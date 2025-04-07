@@ -201,10 +201,10 @@ func damage_player(damage: int) -> bool:
 	return true
 		
 func die():
+	GlobalVariables.player_died.emit()
 	queue_free()
 	health_scene.queue_free()
 	get_tree().root.add_child(game_over_scene)
-	pass
 
 func _on_invincibility_timer_timeout() -> void:
 	invincible = false

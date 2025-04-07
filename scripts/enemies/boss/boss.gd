@@ -30,6 +30,11 @@ func start_battle():
 	get_tree().root.add_child(health_bar)
 	health_bar.max_health = health
 	health_bar.health = health
+	GlobalVariables.player_died.connect(on_player_died)
+
+func on_player_died():
+	if is_instance_valid(health_bar):
+		health_bar.queue_free()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
