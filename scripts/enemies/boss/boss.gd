@@ -53,8 +53,12 @@ func _on_shake_timer_timeout() -> void:
 	shaking = false
 	sprite.position = Vector2(0,0)
 
-func damage_boss():
+# returns true if damage happened
+func damage_boss() -> bool:
 	if is_weak:
 		health -= 1
+		$DamageEffect.damage_effect()
 		if health <= 0:
 			die()
+			return true
+	return false

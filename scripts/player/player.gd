@@ -174,9 +174,13 @@ func attack():
 	var hit_object = ray_cast.get_collider()
 	if hit_object is Enemy:
 		(hit_object as Enemy).hit_enemy(ray_cast.target_position.normalized() * 300, 1)
+		$AttackHitSound.play()
 	
 	if hit_object is Boss:
-		(hit_object as Boss).damage_boss()
+		if (hit_object as Boss).damage_boss():
+			$AttackHitSound.play()
+		else:
+			$DeflectSound.play()
 
 func _on_attack_timer_timeout() -> void:
 	sprite.play("idle")
@@ -185,6 +189,7 @@ func _on_attack_timer_timeout() -> void:
 # returns false if this killed the player
 func damage_player(damage: int) -> bool:
 	if !invincible:
+		$DamageEffect.damage_effect()
 		health -= damage
 		if health <= 0:
 			die()

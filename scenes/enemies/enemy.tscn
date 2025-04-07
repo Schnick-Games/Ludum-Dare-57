@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://claj6wcferre1"]
+[gd_scene load_steps=9 format=3 uid="uid://claj6wcferre1"]
 
 [ext_resource type="Texture2D" uid="uid://danomhbmwpkec" path="res://art/enemies/cat/CatWalk-Sheet.png" id="1_6xk8f"]
 [ext_resource type="Script" uid="uid://kd17gguu8nb1" path="res://scripts/enemies/enemy.gd" id="1_8e3ao"]
+[ext_resource type="PackedScene" uid="uid://dp68grnhlgk6k" path="res://scenes/gameplay/damage_effect.tscn" id="2_fcftc"]
 [ext_resource type="PackedScene" uid="uid://cu76y5gilhqw2" path="res://scenes/particle_effects/sparkle.tscn" id="3_38ino"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8e3ao"]
@@ -32,6 +33,9 @@ animations = [{
 collision_layer = 3
 script = ExtResource("1_8e3ao")
 walk_speed = 200.0
+
+[node name="DamageEffect" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("2_fcftc")]
+sprite = NodePath("../AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

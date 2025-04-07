@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://esrlrw66x4vm"]
+[gd_scene load_steps=19 format=3 uid="uid://esrlrw66x4vm"]
 
 [ext_resource type="Texture2D" uid="uid://dcos8tebajo6g" path="res://art/player/PlayerIdle-Sheet.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://cpqf35o3atire" path="res://scripts/player/player.gd" id="1_dovo2"]
@@ -6,6 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://csackjxod5gsr" path="res://audio/player/attack/MolemanAttack3.wav" id="4_p47bc"]
 [ext_resource type="AudioStream" uid="uid://bko1byacygeuo" path="res://audio/player/landing/DirtLanding.wav" id="5_p47bc"]
 [ext_resource type="AudioStream" uid="uid://da7ur63lq0db0" path="res://audio/player/landing/Landing1.wav" id="6_75vfm"]
+[ext_resource type="AudioStream" uid="uid://b4fl2yldgh7tu" path="res://audio/player/attack/attack_deflected/Deflected.wav" id="7_0owmy"]
+[ext_resource type="AudioStream" uid="uid://ch3rb3aerhsq7" path="res://audio/player/attack/attack_hit/AttackHit2.wav" id="8_qek5x"]
+[ext_resource type="PackedScene" uid="uid://dp68grnhlgk6k" path="res://scenes/gameplay/damage_effect.tscn" id="9_5gtgg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("1_8afob")
@@ -55,14 +58,31 @@ random_volume_offset_db = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("6_75vfm")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qek5x"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("7_0owmy")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5gtgg"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("8_qek5x")
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_dovo2")
 gravity = 3000.0
+walk_speed = null
 jump_velocity = 1300.0
+max_fall_velocity = null
+slide_velocity = null
 dash_velocity = 2000.0
 horizontal_drag = 6500.0
+max_jumps = null
+max_dash = null
+max_jumps_from_slide = null
+max_health = null
 double_jump_unlocked = true
 wall_jump_unlocked = true
 wall_slide_unlocked = true
@@ -111,6 +131,17 @@ one_shot = true
 [node name="HeadBumpSounds" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_p47bc")
 volume_db = -35.0
+
+[node name="DeflectSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_qek5x")
+
+[node name="AttackHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_5gtgg")
+volume_db = -10.0
+pitch_scale = 0.85
+
+[node name="DamageEffect" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("9_5gtgg")]
+sprite = NodePath("../AnimatedSprite2D")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

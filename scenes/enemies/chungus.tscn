@@ -18,17 +18,17 @@ animations = [{
 walk_speed = 100.0
 max_health = 3
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_0n3ad")
 animation = &"default"
 frame_progress = 0.0
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-2, 10)
 scale = Vector2(3.53516, 4.48916)
 
-[node name="RayCast2D" parent="." index="3"]
+[node name="RayCast2D" parent="." index="4"]
 position = Vector2(20, 34)
 
-[node name="AttackRaycast" parent="." index="4"]
+[node name="AttackRaycast" parent="." index="5"]
 position = Vector2(33, -3)

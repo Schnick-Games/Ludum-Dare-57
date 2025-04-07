@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfv8y08vtqo8u"]
+[gd_scene load_steps=10 format=3 uid="uid://cfv8y08vtqo8u"]
 
 [ext_resource type="Texture2D" uid="uid://c6ltqs8ecbkdd" path="res://art/enemies/boss/Boss-Sheet.png" id="1_1ex25"]
 [ext_resource type="Script" uid="uid://c3sq76nqneyvo" path="res://scripts/enemies/boss/boss.gd" id="1_3uc6t"]
+[ext_resource type="PackedScene" uid="uid://dp68grnhlgk6k" path="res://scenes/gameplay/damage_effect.tscn" id="3_ub7yk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3uc6t"]
 atlas = ExtResource("1_1ex25")
@@ -62,6 +63,9 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 79)
 shape = SubResource("CapsuleShape2D_3uc6t")
+
+[node name="DamageEffect" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_ub7yk")]
+sprite = NodePath("../AnimatedSprite2D")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_shake_timer_timeout"]
