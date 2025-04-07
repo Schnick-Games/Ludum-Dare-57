@@ -56,6 +56,17 @@ theme_override_font_sizes/font_size = 23
 text = "YOU BEAT THE BOSS!"
 horizontal_alignment = 1
 
+[node name="Time" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.517647, 0.494118, 0.529412, 1)
+theme_override_colors/font_shadow_color = Color(0.588235, 0.654902, 0.690196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "Time: 999:99.99"
+horizontal_alignment = 1
+
 [node name="Menu Options" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2

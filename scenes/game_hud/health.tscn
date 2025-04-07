@@ -8,3 +8,11 @@ script = ExtResource("1_eifoc")
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Time" type="Label" parent="."]
+offset_left = 1050.0
+offset_top = 6.0
+offset_right = 1145.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 22
+text = "00:00"

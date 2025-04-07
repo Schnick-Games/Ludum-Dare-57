@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 			icons[i].texture = health_empty_ico
 		else:
 			icons[i].texture = health_ico
-			
+	
+	set_time()
 	
 func create_health_bar():
 	var icon: TextureRect = TextureRect.new()
@@ -32,3 +33,12 @@ func setup_health(in_player: Player):
 	player = in_player
 	for i in in_player.max_health:
 		create_health_bar()
+
+func set_time():
+	var time_string: String = str(int(floor(GlobalVariables.time /60.0)))
+	time_string += ":"
+	var seconds: float = snapped(fmod(GlobalVariables.time, 60), 0.01)
+	if seconds < 10.0:
+		time_string += "0"
+	time_string += str(seconds)
+	$Time.text = time_string
