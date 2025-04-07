@@ -18,6 +18,10 @@ var attacks_until_weak: int = 3
 var max_damage_while_weak: int = 3
 var remaining_damage: int = 3
 var is_weak: bool = false
+var is_dead: bool = false
+
+@export var boss_platforms: Array[BossPlatform]
+@export var shoe_spikes: Array[Spikes]
 
 func start_battle():
 	$Timer.start()
@@ -39,14 +43,19 @@ func _process(delta: float) -> void:
 		sprite.position.x = 20 * (cos(time * 17) + cos(time * 7))
 
 func die():
+	$Timer.stop()
+	$AnimatedSprite2D.frame = 3
+	rotation_degrees = 90
+	position.y += 640
 	health_bar.queue_free()
+	is_dead = true
 	var win_screen = WIN_SCREEN.instantiate()
 	get_tree().root.add_child(win_screen)
 
 func attack(floor: int, left_side: bool):
 	attack_count += 1
 	sprite.frame = floor
-	sprite.flip_h = left_side
+	sprite.flip_h = !left_side
 	shaking = true
 	$ShakeTimer.start()
 
@@ -57,9 +66,20 @@ func _on_timer_timeout() -> void:
 		attack_count = 0
 		$Timer.start(5)
 		sprite.frame = 3
+		set_spikes_enabled(false)
 	else:
+		$Timer.start(3)
 		is_weak = false
-		attack(randi_range(0, 2), randi_range(0, 1))
+		set_spikes_enabled(true)
+		if !boss_platforms.is_empty():
+			var platform: BossPlatform = boss_platforms.pick_random()
+			boss_platforms.remove_at(boss_platforms.find(platform))
+			platform.destroy()
+			attack(platform.floor, platform.left)
+
+func set_spikes_enabled(enabled: bool):
+	for spike in shoe_spikes:
+		spike.set_enabled(enabled)
 
 func _on_shake_timer_timeout() -> void:
 	shaking = false
@@ -67,6 +87,8 @@ func _on_shake_timer_timeout() -> void:
 
 # returns true if damage happened
 func damage_boss() -> bool:
+	if is_dead:
+		return false
 	if is_weak:
 		health -= 1
 		health_bar.health = health
@@ -77,5 +99,6 @@ func damage_boss() -> bool:
 			die()
 			return true
 		if remaining_damage <= 0:
-			$Timer.start(0.001)
+			is_weak = false
+			$Timer.start(1)
 	return false
