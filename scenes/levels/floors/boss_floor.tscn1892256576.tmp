@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://biskjhlwsmcph"]
+[gd_scene load_steps=11 format=3 uid="uid://biskjhlwsmcph"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_wurc2"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="2_bog53"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cfv8y08vtqo8u" path="res://scenes/enemies/boss.tscn" id="5_a7512"]
 [ext_resource type="PackedScene" uid="uid://bhn4ixf7tvdf1" path="res://scenes/world_objects/manhole.tscn" id="6_thbdn"]
 [ext_resource type="PackedScene" uid="uid://7ep06dtxddcx" path="res://scenes/world_objects/one_way_platform.tscn" id="6_y8fb1"]
-[ext_resource type="Script" uid="uid://bvehsff4xlofd" path="res://scripts/world_objects/boss_platform.gd" id="7_wurc2"]
 [ext_resource type="PackedScene" uid="uid://bkjlmgwn4wnc3" path="res://scenes/gameplay/boss_entrance.tscn" id="8_c1npd"]
+[ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="9_c1npd"]
+[ext_resource type="PackedScene" uid="uid://cf5jerwacln2v" path="res://scenes/enemies/chungus.tscn" id="10_wurc2"]
 
 [node name="BossFloor" type="Node2D"]
 script = ExtResource("1_wurc2")
@@ -20,24 +21,29 @@ position = Vector2(64, 64)
 
 [node name="Floor26" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7616, 1856)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor27" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3648, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor31" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3264, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor33" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3392, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor34" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3520, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor39" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8000, 1600)
 
 [node name="Floor41" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
-position = Vector2(6080, 1861)
+position = Vector2(5952, 1984)
 texture = ExtResource("3_27s7v")
 
 [node name="Floor48" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
@@ -57,6 +63,7 @@ texture = ExtResource("3_27s7v")
 
 [node name="Floor56" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3136, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor58" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(704, 1984)
@@ -72,6 +79,7 @@ texture = ExtResource("3_27s7v")
 
 [node name="Floor66" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4416, 960)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor67" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(832, 1984)
@@ -79,15 +87,19 @@ texture = ExtResource("3_27s7v")
 
 [node name="Floor70" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7872, 449)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor71" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3776, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor74" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3008, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor91" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7488, 1856)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor92" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7616, 448)
@@ -100,9 +112,11 @@ position = Vector2(7616, 320)
 
 [node name="Floor95" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 575)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor96" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4416, 1601)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor97" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4416, 832)
@@ -118,33 +132,41 @@ position = Vector2(7616, 704)
 
 [node name="Floor103" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7488, 836)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor104" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 1212)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor105" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7488, 964)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor106" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7744, 1474)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor107" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7744, 1602)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor108" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8000, 320)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor112" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4416, 576)
 
 [node name="Floor116" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 956)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor126" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 832)
 
 [node name="Floor131" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8000, 832)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor133" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4416, 1729)
@@ -154,6 +176,7 @@ position = Vector2(4544, 1088)
 
 [node name="Floor138" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 1605)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor139" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(5952, 1860)
@@ -161,6 +184,7 @@ texture = ExtResource("3_27s7v")
 
 [node name="Floor140" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7616, 1092)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor141" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8128, 1088)
@@ -170,18 +194,23 @@ position = Vector2(6848, 1984)
 
 [node name="Floor143" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 1734)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor144" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 1477)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor145" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 451)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor146" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 1340)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor151" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 323)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor152" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7872, 1601)
@@ -191,9 +220,11 @@ position = Vector2(8128, 960)
 
 [node name="Floor154" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7872, 961)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor156" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7872, 194)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor160" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8000, 1729)
@@ -203,12 +234,15 @@ position = Vector2(8000, 1857)
 
 [node name="Floor163" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7872, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor164" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7744, 1728)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor167" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7872, 832)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor168" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8128, 320)
@@ -264,15 +298,19 @@ position = Vector2(7616, 1604)
 
 [node name="Floor218" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1600, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor219" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1728, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor220" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1856, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor223" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1472, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor232" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8128, 64)
@@ -316,15 +354,12 @@ position = Vector2(8000, 1344)
 
 [node name="Floor318" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(320, 1984)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor321" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(192, 1984)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor337" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1344, 1984)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor338" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4416, 320)
@@ -363,7 +398,7 @@ position = Vector2(8000, 1984)
 position = Vector2(7616, 1732)
 
 [node name="Floor361" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
-position = Vector2(5952, 1984)
+position = Vector2(6080, 1860)
 
 [node name="Floor362" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 703)
@@ -454,10 +489,10 @@ position = Vector2(64, 1984)
 
 [node name="Floor398" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1216, 1984)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor404" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4416, 197)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor407" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(448, 1984)
@@ -500,6 +535,7 @@ position = Vector2(5312, 1984)
 
 [node name="Floor444" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7744, 1856)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor445" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(6336, 1984)
@@ -507,9 +543,11 @@ texture = ExtResource("3_27s7v")
 
 [node name="Floor446" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, 1856)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor449" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4416, 1856)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor456" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(6464, 1984)
@@ -527,12 +565,15 @@ position = Vector2(6208, 1984)
 
 [node name="Floor462" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7872, 1089)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor464" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8000, 1472)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor465" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7872, 705)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor466" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(320, 64)
@@ -692,12 +733,15 @@ position = Vector2(7744, 64)
 
 [node name="Floor520" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7488, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor521" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7616, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor522" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7744, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor527" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(6720, 1984)
@@ -729,6 +773,7 @@ position = Vector2(7104, 64)
 
 [node name="Floor536" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8128, 1984)
+texture = ExtResource("3_27s7v")
 
 [node name="Floor538" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(7872, 576)
@@ -813,31 +858,24 @@ position = Vector2(320, -64)
 
 [node name="Floor568" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3264, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor569" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1728, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor570" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1856, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor571" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1984, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor572" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(2112, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor573" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1472, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor574" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1600, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor575" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(1088, 320)
@@ -865,47 +903,36 @@ position = Vector2(576, -64)
 
 [node name="Floor583" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3392, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor584" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3520, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor585" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(2752, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor586" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(2880, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor587" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3008, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor588" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3136, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor589" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(2496, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor590" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(2624, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor591" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(2240, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor592" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(2368, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor593" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3648, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor594" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(6592, -64)
@@ -924,14 +951,12 @@ position = Vector2(5440, -64)
 
 [node name="Floor599" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4800, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor601" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4544, -64)
 
 [node name="Floor602" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4672, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor1296" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4673, 320)
@@ -950,18 +975,15 @@ position = Vector2(4416, -64)
 
 [node name="Floor605" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4032, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor606" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(4160, -64)
 
 [node name="Floor607" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3776, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor608" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(3904, -64)
-texture = ExtResource("3_27s7v")
 
 [node name="Floor609" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(6720, -64)
@@ -2741,6 +2763,7 @@ position = Vector2(8256, -448)
 
 [node name="Floor109" parent="ObstacleContainer" instance=ExtResource("2_bog53")]
 position = Vector2(8000, 193)
+texture = ExtResource("3_27s7v")
 
 [node name="Spikes" type="Node2D" parent="."]
 
@@ -2832,136 +2855,82 @@ position = Vector2(6783, 320)
 
 [node name="Decorations" type="Node2D" parent="."]
 
-[node name="Boss" parent="." node_paths=PackedStringArray("boss_platforms", "shoe_spikes") instance=ExtResource("5_a7512")]
+[node name="Boss" parent="." instance=ExtResource("5_a7512")]
 position = Vector2(6002, 1156)
-boss_platforms = [NodePath("../Platforms/OneWayPlatform"), NodePath("../Platforms/OneWayPlatform3"), NodePath("../Platforms/OneWayPlatform2"), NodePath("../Platforms/OneWayPlatform7"), NodePath("../Platforms/OneWayPlatform8"), NodePath("../Platforms/OneWayPlatform9"), NodePath("../Platforms/OneWayPlatform10"), NodePath("../Platforms/OneWayPlatform11"), NodePath("../Platforms/OneWayPlatform12"), NodePath("../Platforms/OneWayPlatform13"), NodePath("../Platforms/OneWayPlatform14"), NodePath("../Platforms/OneWayPlatform15"), NodePath("../Platforms/OneWayPlatform16"), NodePath("../Platforms/OneWayPlatform17"), NodePath("../Platforms/OneWayPlatform18"), NodePath("../Platforms/OneWayPlatform19"), NodePath("../Platforms/OneWayPlatform20"), NodePath("../Platforms/OneWayPlatform21"), NodePath("../Platforms/OneWayPlatform22"), NodePath("../Platforms/OneWayPlatform23"), NodePath("../Platforms/OneWayPlatform24"), NodePath("../Platforms/OneWayPlatform4"), NodePath("../Platforms/OneWayPlatform5"), NodePath("../Platforms/OneWayPlatform6")]
-shoe_spikes = [NodePath("../Spikes16"), NodePath("../Spikes3")]
 
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="OneWayPlatform" parent="Platforms" instance=ExtResource("6_y8fb1")]
 position = Vector2(4800, 1093)
-script = ExtResource("7_wurc2")
-floor = 1
-left = true
 
-[node name="OneWayPlatform3" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(4800, 1469)
-script = ExtResource("7_wurc2")
-floor = 2
-left = true
+[node name="OneWayPlatform5" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(6400, 1093)
 
 [node name="OneWayPlatform2" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(4800, 645)
-script = ExtResource("7_wurc2")
-left = true
+position = Vector2(5056, 1092)
+
+[node name="OneWayPlatform3" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(5312, 1092)
+
+[node name="OneWayPlatform4" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(5568, 1093)
+
+[node name="OneWayPlatform6" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(6656, 1093)
 
 [node name="OneWayPlatform7" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(5056, 1093)
-script = ExtResource("7_wurc2")
-floor = 1
-left = true
+position = Vector2(6912, 1093)
 
 [node name="OneWayPlatform8" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(5056, 1469)
-script = ExtResource("7_wurc2")
-floor = 2
-left = true
-
-[node name="OneWayPlatform9" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(5056, 645)
-script = ExtResource("7_wurc2")
-left = true
-
-[node name="OneWayPlatform10" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(5312, 1093)
-script = ExtResource("7_wurc2")
-floor = 1
-left = true
-
-[node name="OneWayPlatform11" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(5312, 1469)
-script = ExtResource("7_wurc2")
-floor = 2
-left = true
-
-[node name="OneWayPlatform12" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(5312, 645)
-script = ExtResource("7_wurc2")
-left = true
-
-[node name="OneWayPlatform13" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(5568, 1093)
-script = ExtResource("7_wurc2")
-floor = 1
-left = true
-
-[node name="OneWayPlatform14" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(5568, 1469)
-script = ExtResource("7_wurc2")
-floor = 2
-left = true
-
-[node name="OneWayPlatform15" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(5568, 645)
-script = ExtResource("7_wurc2")
-left = true
-
-[node name="OneWayPlatform16" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(6400, 1093)
-script = ExtResource("7_wurc2")
-floor = 1
+position = Vector2(7168, 1094)
 
 [node name="OneWayPlatform17" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(6400, 1469)
-script = ExtResource("7_wurc2")
-floor = 2
+position = Vector2(4800, 1469)
 
 [node name="OneWayPlatform18" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(6400, 645)
-script = ExtResource("7_wurc2")
+position = Vector2(6400, 1469)
 
 [node name="OneWayPlatform19" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(6656, 1093)
-script = ExtResource("7_wurc2")
-floor = 1
+position = Vector2(5056, 1468)
 
 [node name="OneWayPlatform20" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(6656, 1469)
-script = ExtResource("7_wurc2")
-floor = 2
+position = Vector2(5312, 1468)
 
 [node name="OneWayPlatform21" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(6656, 645)
-script = ExtResource("7_wurc2")
+position = Vector2(5568, 1469)
 
 [node name="OneWayPlatform22" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(6912, 1093)
-script = ExtResource("7_wurc2")
-floor = 1
+position = Vector2(6656, 1469)
 
 [node name="OneWayPlatform23" parent="Platforms" instance=ExtResource("6_y8fb1")]
 position = Vector2(6912, 1469)
-script = ExtResource("7_wurc2")
-floor = 2
 
 [node name="OneWayPlatform24" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(6912, 645)
-script = ExtResource("7_wurc2")
+position = Vector2(7168, 1470)
 
-[node name="OneWayPlatform4" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(7168, 1093)
-script = ExtResource("7_wurc2")
-floor = 1
+[node name="OneWayPlatform9" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(4801, 645)
 
-[node name="OneWayPlatform5" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(7168, 1469)
-script = ExtResource("7_wurc2")
-floor = 2
+[node name="OneWayPlatform10" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(6401, 645)
 
-[node name="OneWayPlatform6" parent="Platforms" instance=ExtResource("6_y8fb1")]
-position = Vector2(7168, 645)
-script = ExtResource("7_wurc2")
+[node name="OneWayPlatform11" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(5057, 644)
+
+[node name="OneWayPlatform12" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(5313, 644)
+
+[node name="OneWayPlatform13" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(5569, 645)
+
+[node name="OneWayPlatform14" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(6657, 645)
+
+[node name="OneWayPlatform15" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(6913, 645)
+
+[node name="OneWayPlatform16" parent="Platforms" instance=ExtResource("6_y8fb1")]
+position = Vector2(7169, 646)
 
 [node name="Manhole" parent="." instance=ExtResource("6_thbdn")]
 position = Vector2(4928, -184)
@@ -2974,10 +2943,8 @@ position = Vector2(4925, 61)
 boss = NodePath("../Boss")
 manhole = NodePath("../Manhole")
 
-[node name="Spikes16" parent="." node_paths=PackedStringArray("respawn_pos") instance=ExtResource("4_ltg3x")]
-position = Vector2(6080, 1735)
-respawn_pos = NodePath("../Spikes/SpikeRespawnPoint2")
+[node name="Player" parent="." instance=ExtResource("9_c1npd")]
+position = Vector2(4681, -231)
 
-[node name="Spikes3" parent="." node_paths=PackedStringArray("respawn_pos") instance=ExtResource("4_ltg3x")]
-position = Vector2(5952, 1735)
-respawn_pos = NodePath("../Spikes/SpikeRespawnPoint")
+[node name="Enemy" parent="." instance=ExtResource("10_wurc2")]
+position = Vector2(3998, -234)

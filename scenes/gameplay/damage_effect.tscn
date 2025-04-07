@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp68grnhlgk6k"]
+
+[ext_resource type="Script" uid="uid://co633ivptueqt" path="res://scripts/gameplay/damage_effect.gd" id="1_tn6om"]
+
+[node name="DamageEffect" type="Timer"]
+wait_time = 0.1
+one_shot = true
+script = ExtResource("1_tn6om")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

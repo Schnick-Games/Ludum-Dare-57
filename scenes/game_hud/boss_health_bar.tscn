@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc0pvo682s1ah"]
+
+[ext_resource type="Script" uid="uid://b071qyln150rd" path="res://scripts/game_hud/boss_health_bar.gd" id="1_k4wtq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o68w7"]
+bg_color = Color(0.6, 0.266667, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tesh7"]
+bg_color = Color(0.6, 0.6, 0.341176, 1)
+
+[node name="BossHealthBar" type="CanvasLayer"]
+script = ExtResource("1_k4wtq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -95.0
+offset_right = 100.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "Boss"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_o68w7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tesh7")
+show_percentage = false

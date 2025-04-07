@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://claj6wcferre1"]
+[gd_scene load_steps=11 format=3 uid="uid://claj6wcferre1"]
 
 [ext_resource type="Texture2D" uid="uid://danomhbmwpkec" path="res://art/enemies/cat/CatWalk-Sheet.png" id="1_6xk8f"]
 [ext_resource type="Script" uid="uid://kd17gguu8nb1" path="res://scripts/enemies/enemy.gd" id="1_8e3ao"]
+[ext_resource type="PackedScene" uid="uid://dp68grnhlgk6k" path="res://scenes/gameplay/damage_effect.tscn" id="2_fcftc"]
 [ext_resource type="PackedScene" uid="uid://cu76y5gilhqw2" path="res://scenes/particle_effects/sparkle.tscn" id="3_38ino"]
+[ext_resource type="AudioStream" uid="uid://b2u3qnqjt88s6" path="res://audio/enemies/CasperSingleMeow.wav" id="5_lu5c6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8e3ao"]
 atlas = ExtResource("1_6xk8f")
@@ -28,10 +30,17 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e3ao"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nb6gf"]
+streams_count = 1
+stream_0/stream = ExtResource("5_lu5c6")
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_8e3ao")
 walk_speed = 200.0
+
+[node name="DamageEffect" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("2_fcftc")]
+sprite = NodePath("../AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -60,5 +69,9 @@ scale = Vector2(0.5, 0.5)
 emitting = false
 scale_amount_min = 0.2
 scale_amount_max = 0.6
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_nb6gf")
+volume_db = 1.1
 
 [connection signal="timeout" from="RagdollTimer" to="." method="_on_ragdoll_timer_timeout"]
