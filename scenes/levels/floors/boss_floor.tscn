@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://biskjhlwsmcph"]
+[gd_scene load_steps=10 format=3 uid="uid://biskjhlwsmcph"]
 
 [ext_resource type="Script" uid="uid://cmkrs443n000f" path="res://scripts/floor/first_floor.gd" id="1_wurc2"]
 [ext_resource type="PackedScene" uid="uid://bunawsa54lutb" path="res://scenes/floor/floor.tscn" id="2_bog53"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://7ep06dtxddcx" path="res://scenes/world_objects/one_way_platform.tscn" id="6_y8fb1"]
 [ext_resource type="PackedScene" uid="uid://bkjlmgwn4wnc3" path="res://scenes/gameplay/boss_entrance.tscn" id="8_c1npd"]
 [ext_resource type="PackedScene" uid="uid://esrlrw66x4vm" path="res://scenes/player/player.tscn" id="9_c1npd"]
-[ext_resource type="PackedScene" uid="uid://cf5jerwacln2v" path="res://scenes/enemies/chungus.tscn" id="10_wurc2"]
 
 [node name="BossFloor" type="Node2D"]
 script = ExtResource("1_wurc2")
@@ -2945,13 +2944,3 @@ manhole = NodePath("../Manhole")
 
 [node name="Player" parent="." instance=ExtResource("9_c1npd")]
 position = Vector2(4681, -231)
-walk_speed = 500.0
-max_fall_velocity = 2000.0
-slide_velocity = 150.0
-max_jumps = 1
-max_dash = 1
-max_jumps_from_slide = 1
-max_health = 3
-
-[node name="Enemy" parent="." instance=ExtResource("10_wurc2")]
-position = Vector2(3998, -234)

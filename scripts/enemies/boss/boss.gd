@@ -11,10 +11,12 @@ var sprite: AnimatedSprite2D
 var shaking: bool = false
 var time: float = 0
 
-var health: int = 10
+var health: int = 9
 
 var attack_count:int = 0
-var attacks_until_weak:int = 3
+var attacks_until_weak: int = 3
+var max_damage_while_weak: int = 3
+var remaining_damage: int = 3
 var is_weak: bool = false
 
 func start_battle():
@@ -51,6 +53,7 @@ func attack(floor: int, left_side: bool):
 func _on_timer_timeout() -> void:
 	if attack_count >= attacks_until_weak:
 		is_weak = true
+		remaining_damage = max_damage_while_weak
 		attack_count = 0
 		$Timer.start(5)
 		sprite.frame = 3
@@ -69,7 +72,10 @@ func damage_boss() -> bool:
 		health_bar.health = health
 		$DamageEffect.damage_effect()
 		$DamageSound.play()
+		remaining_damage -= 1
 		if health <= 0:
 			die()
 			return true
+		if remaining_damage <= 0:
+			$Timer.start(0.001)
 	return false
