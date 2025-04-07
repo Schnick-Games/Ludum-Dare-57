@@ -2,20 +2,28 @@ class_name Boss
 extends Area2D
 
 const WIN_SCREEN: Resource = preload("res://scenes/levels/win_screen.tscn")
+const HEALTH_BAR: Resource = preload("res://scenes/game_hud/boss_health_bar.tscn")
+
+var health_bar: BossHealthBar 
 
 var sprite: AnimatedSprite2D
 
 var shaking: bool = false
 var time: float = 0
 
-var health: int = 1
+var health: int = 10
 
 var attack_count:int = 0
-var attacks_until_weak:int = 5
+var attacks_until_weak:int = 3
 var is_weak: bool = false
 
 func start_battle():
 	$Timer.start()
+	
+	health_bar = HEALTH_BAR.instantiate()
+	get_tree().root.add_child(health_bar)
+	health_bar.max_health = health
+	health_bar.health = health
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,6 +37,7 @@ func _process(delta: float) -> void:
 		sprite.position.x = 20 * (cos(time * 17) + cos(time * 7))
 
 func die():
+	health_bar.queue_free()
 	var win_screen = WIN_SCREEN.instantiate()
 	get_tree().root.add_child(win_screen)
 
@@ -57,6 +66,7 @@ func _on_shake_timer_timeout() -> void:
 func damage_boss() -> bool:
 	if is_weak:
 		health -= 1
+		health_bar.health = health
 		$DamageEffect.damage_effect()
 		$DamageSound.play()
 		if health <= 0:
